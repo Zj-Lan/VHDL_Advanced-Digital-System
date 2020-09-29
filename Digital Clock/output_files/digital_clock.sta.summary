@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'key'
+Slack : -8.895
+TNS   : -54.706
+
+Type  : Slow 1100mV 85C Model Setup 'qout2_h[0]'
+Slack : -8.331
+TNS   : -16.347
+
+Type  : Slow 1100mV 85C Model Setup 'alarm_clk'
+Slack : -0.875
+TNS   : -0.875
+
+Type  : Slow 1100mV 85C Model Hold 'alarm_clk'
+Slack : 0.753
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'qout2_h[0]'
+Slack : 1.025
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'key'
+Slack : 1.303
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'key'
+Slack : -0.724
+TNS   : -17.810
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'alarm_clk'
+Slack : -0.724
+TNS   : -1.113
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'qout2_h[0]'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'key'
+Slack : -8.565
+TNS   : -54.509
+
+Type  : Slow 1100mV 0C Model Setup 'qout2_h[0]'
+Slack : -7.904
+TNS   : -15.625
+
+Type  : Slow 1100mV 0C Model Setup 'alarm_clk'
+Slack : -0.859
+TNS   : -0.859
+
+Type  : Slow 1100mV 0C Model Hold 'alarm_clk'
+Slack : 0.746
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'qout2_h[0]'
+Slack : 0.835
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'key'
+Slack : 1.228
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'key'
+Slack : -0.724
+TNS   : -17.779
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'alarm_clk'
+Slack : -0.724
+TNS   : -1.119
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'qout2_h[0]'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'key'
+Slack : -3.991
+TNS   : -21.862
+
+Type  : Fast 1100mV 85C Model Setup 'qout2_h[0]'
+Slack : -3.483
+TNS   : -6.369
+
+Type  : Fast 1100mV 85C Model Setup 'alarm_clk'
+Slack : 0.009
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'alarm_clk'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'key'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'qout2_h[0]'
+Slack : 0.729
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'key'
+Slack : -0.253
+TNS   : -3.976
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'alarm_clk'
+Slack : -0.189
+TNS   : -0.189
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'qout2_h[0]'
+Slack : 0.458
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'key'
+Slack : -3.438
+TNS   : -18.543
+
+Type  : Fast 1100mV 0C Model Setup 'qout2_h[0]'
+Slack : -3.147
+TNS   : -5.739
+
+Type  : Fast 1100mV 0C Model Setup 'alarm_clk'
+Slack : 0.046
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'alarm_clk'
+Slack : 0.257
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'key'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'qout2_h[0]'
+Slack : 0.634
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'key'
+Slack : -0.260
+TNS   : -4.080
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'alarm_clk'
+Slack : -0.214
+TNS   : -0.214
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'qout2_h[0]'
+Slack : 0.462
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,22 @@
+library ieee ;
+use ieee . std_logic_1164 . all ;
+
+ENTITY timer IS
+	PORT ( Clk , Reset : in std_logic ;
+			Pulse: out std_logic);
+END timer;
+
+ARCHITECTURE design_timer OF timer IS
+
+BEGIN
+	process (Clk)
+		begin
+			if (Clk'event and Clk = '1') then
+				if (Reset='1') then
+					Pulse <= '0';
+				else
+					Pulse <= '1';
+				end if ;
+			end if ;
+		end process ;
+END design_timer;

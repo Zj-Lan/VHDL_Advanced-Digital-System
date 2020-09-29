@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/program/A2_Task4/simulation/qsim
+Eward_switch_15
+Z1 w1581916837
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+R0
+Z9 8ward_switch_15.vho
+Z10 Fward_switch_15.vho
+l0
+L36
+VT:8A;ZCb8=?zJaiP:RfWM3
+!s100 h_[>CN^OCL_f:R>98a`fe1
+Z11 OV;C;10.5b;63
+32
+Z12 !s110 1581916838
+!i10b 1
+Z13 !s108 1581916838.000000
+Z14 !s90 -work|work|ward_switch_15.vho|
+Z15 !s107 ward_switch_15.vho|
+!i113 1
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 14 ward_switch_15 0 22 T:8A;ZCb8=?zJaiP:RfWM3
+l174
+L81
+VbWH:EmP[Y8KNY4cam0CL20
+!s100 BQoUXakVM@Rk@[gUbiUi41
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Eward_switch_15_vhd_vec_tst
+Z18 w1581916835
+R6
+R7
+R0
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
+l0
+L31
+V8`nURRn27I]Bhm`:d4=oo1
+!s100 IMe42Xk:j3CHVI<FREDa@0
+R11
+32
+R12
+!i10b 1
+R13
+Z21 !s90 -work|work|Waveform.vwf.vht|
+Z22 !s107 Waveform.vwf.vht|
+!i113 1
+R16
+R17
+Award_switch_15_arch
+R6
+R7
+Z23 DEx4 work 26 ward_switch_15_vhd_vec_tst 0 22 8`nURRn27I]Bhm`:d4=oo1
+l46
+L33
+Z24 VS<3z8>]@@[e:;AnHI3PL31
+Z25 !s100 MGlXP2fMnEgm7QNT6>_VH1
+R11
+32
+R12
+!i10b 1
+R13
+R21
+R22
+!i113 1
+R16
+R17

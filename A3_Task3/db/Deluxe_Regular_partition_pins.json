@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "soap",
+					"strict" : false
+				},
+				{
+					"name" : "water",
+					"strict" : false
+				},
+				{
+					"name" : "brush",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "token_1",
+					"strict" : false
+				},
+				{
+					"name" : "token_2",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

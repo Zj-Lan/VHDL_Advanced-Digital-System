@@ -1,0 +1,116 @@
+--student name: ZHIJIE LAN
+--student number: 201990309
+--RTMD_Controller module
+
+library ieee; use ieee.std_logic_1164.all;
+
+ENTITY RTMD_Controller IS 
+	PORT( Trigger, Reset, Clock : IN STD_LOGIC;
+			Temp, DetNo, MaxRate, MaxTemp : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			RstAlarm, TxBusy : IN STD_LOGIC;
+			TxWrite, Alarm : OUT STD_LOGIC;
+			TxData : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+END RTMD_Controller; 
+
+ARCHITECTURE design_RTMD OF RTMD_Controller IS
+component counter8bit is
+	port ( clk , rst : in std_logic ;
+	q: out std_logic_vector (7 downto 0) );
+end component ;
+
+signal start_timer, time_20sec, time_7sec, time_180sec : std_logic ;
+signal q_out : std_logic_vector (7 downto 0);
+-- Declare a state type
+type state_type is (NS_GREEN, NS_YELLOW, EW_GREEN, EW_YELLOW, EW_GREEN_EXT);
+-- Declare current and next state variables .
+-- Init to NS_GREEN since we don ’t have a reset state .
+signal current_state , next_state : state_type := NS_GREEN ;
+BEGIN
+-- Datapath components we incorporated into controller
+t0 : counter8bit port map ( clk , start_timer , q_out );
+time_20sec <= q_out (4) and q_out (2);
+time_7sec <= q_out (2) and q_out (1) and q_out (0);
+time_180sec <= q_out (7) and q_out (5) and q_out (4) and q_out (2);
+-- If we didn ’t already have these equations worked out ,
+-- we could have also written something such as :
+-- time_7sec <= ’1’ when q_out = "00000111" else ’0 ’;
+-- Implement controller state machine ----------------------
+-- Process to clock flip - flops storing
+-- the state information .
+process ( clk )
+begin
+	if (clk'event and clk='1') then
+			current_state <= next_state ;
+	end if ;
+end process ;
+-- Process to determine next state
+
+process ( current_state, time_7sec, time_20sec, time_180sec, car_waiting)
+begin
+	case current_state is
+		when NS_GREEN =>
+			if (time_20sec = '1') then
+				next_state <= NS_YELLOW ;
+			else
+				next_state <= NS_GREEN ;
+			end if ;
+
+		when NS_YELLOW =>
+			if (time_7sec = '0') then
+				next_state <= NS_YELLOW ;
+			else
+				next_state <= EW_GREEN ;
+			end if ;
+			
+		when EW_GREEN =>
+			if (time_20sec = '0') then
+				next_state <= EW_GREEN ;
+			else 
+				if (car_waiting = '1') then
+					next_state <= EW_YELLOW ;
+				else
+					next_state <= EW_GREEN_EXT ;
+				end if ;
+			end if ;
+			
+		when EW_YELLOW =>
+			if (time_7sec = '0') then
+				next_state <= EW_YELLOW ;
+			else
+				next_state <= NS_GREEN ;
+			end if ;
+			
+		when EW_GREEN_EXT =>
+			if (time_180sec = '1') or (car_waiting = '1') then
+				next_state <= EW_YELLOW ;
+			else
+				next_state <= EW_GREEN_EXT ;
+			end if ;
+end case ;
+end process ;
+-- Conditional assignments for outputs:
+nsgreen <= '1' when (current_state = NS_GREEN) else '0';
+nsyellow <= '1' when (current_state = NS_YELLOW) else '0';
+nsred <= '1' when (( current_state = EW_GREEN )
+						or ( current_state = EW_YELLOW ) 
+						or ( current_state = EW_GREEN_EXT )) else '0';
+						
+ewgreen <= '1' when (( current_state = EW_GREEN )
+							or ( current_state = EW_GREEN_EXT )) else '0';
+
+ewyellow <= '1' when ( current_state = EW_YELLOW ) else '0';
+
+ewred <= '1' when (( current_state = NS_GREEN )
+						or ( current_state = NS_YELLOW )) else '0';
+-- The start_timer signal is no longer an output ( since we
+-- moved timer within the controller ) but it still must
+-- be generated .
+start_timer <= '1' when (( current_state = NS_GREEN ) 
+							and ( time_20sec = '1'))	or (( current_state = NS_YELLOW )
+							and ( time_7sec = '1'))	or (( current_state = EW_GREEN ) 
+							and ( time_20sec = '1')
+							and ( car_waiting = '1')) or (( current_state = EW_YELLOW )
+							and ( time_7sec = '1')) or (( current_state = EW_GREEN_EXT )
+							and (( time_180sec = '1') or ( car_waiting = '1')))
+					else '0';
+END top ;

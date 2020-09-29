@@ -1,0 +1,31 @@
+|Deluxe_Regular
+clk => counter5bit:t0.clk
+clk => current_state~1.DATAIN
+token_1 => next_state.DATAA
+token_1 => next_state.DATAA
+token_2 => next_state.OUTPUTSELECT
+token_2 => next_state.OUTPUTSELECT
+token_2 => Selector4.IN3
+soap <= soap.DB_MAX_OUTPUT_PORT_TYPE
+water <= water.DB_MAX_OUTPUT_PORT_TYPE
+brush <= brush.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Deluxe_Regular|counter5bit:t0
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+q[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= cnt[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= cnt[4].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,23 @@
+|Q1
+A => mux4:m1.s0
+B => mux4:m1.s1
+C => comb.IN0
+D => comb.IN1
+D => mux4:m1.d2
+F_Q1 <= mux4:m1.F_mux4
+
+
+|Q1|mux4:m1
+s0 => Equal0.IN1
+s0 => Equal1.IN0
+s0 => Equal2.IN0
+s1 => Equal0.IN0
+s1 => Equal1.IN1
+s1 => Equal2.IN1
+d0 => F_mux4.DATAB
+d1 => F_mux4.DATAB
+d2 => F_mux4.DATAB
+d3 => F_mux4.DATAA
+F_mux4 <= F_mux4.DB_MAX_OUTPUT_PORT_TYPE
+
+

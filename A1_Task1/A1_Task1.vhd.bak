@@ -1,0 +1,13 @@
+ENTITY A1_Task1 IS
+	PORT( A, B,	C	: IN	bit;
+		   F			: OUT	bit );
+END A1_Task1;
+
+ARCHITECTURE design OF A1_Task1 IS
+	SIGNAL X, Y, Z	: bit;
+BEGIN
+	X <= A AND C;
+	Y <= A AND B;
+	Z <= B AND C;
+	F <= X OR Y OR Z;
+END design;

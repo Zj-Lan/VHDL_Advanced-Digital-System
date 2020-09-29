@@ -1,0 +1,287 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/intelFPGA_lite/17.1
+Eq2
+Z0 w1587441601
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dD:/intelFPGA_lite/program/modelSim
+Z6 8D:/intelFPGA_lite/program/Q2/Q2.vhd
+Z7 FD:/intelFPGA_lite/program/Q2/Q2.vhd
+l0
+L5
+VUF`UGFWCJfERT]Df=8U612
+!s100 MACH^8Qi1=X5VDkANQCk@3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1587441605
+!i10b 1
+Z10 !s108 1587441605.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q2/Q2.vhd|
+Z12 !s107 D:/intelFPGA_lite/program/Q2/Q2.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Adesign_q2
+R1
+R2
+R3
+R4
+DEx4 work 2 q2 0 22 UF`UGFWCJfERT]Df=8U612
+l23
+L11
+V;L^oFW>>i0^SH_H?EHbiP2
+!s100 L]IK`b4?^XJ@eZD:b1mcZ0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Eq2_tst
+Z15 w1587429803
+R3
+R4
+R5
+Z16 8D:/intelFPGA_lite/program/Q2/simulation/modelsim/Waveform.vwf.vht
+Z17 FD:/intelFPGA_lite/program/Q2/simulation/modelsim/Waveform.vwf.vht
+l0
+L4
+VCd@Who8aafoUP4hK9W:V62
+!s100 _H[9T0KXV?YGb^TH>zOXe2
+R8
+32
+Z18 !s110 1587441606
+!i10b 1
+Z19 !s108 1587441606.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q2/simulation/modelsim/Waveform.vwf.vht|
+Z21 !s107 D:/intelFPGA_lite/program/Q2/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R13
+R14
+Aq2_arch
+R3
+R4
+DEx4 work 6 q2_tst 0 22 Cd@Who8aafoUP4hK9W:V62
+l20
+L6
+VEg6W1HLIbj5^ADlLdh>2T1
+!s100 VY7@Sem3IWk;c=UP7:S:F0
+R8
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R13
+R14
+Eq3_d1_decoder
+Z22 w1587434960
+R3
+R4
+R5
+Z23 8D:/intelFPGA_lite/program/Q3_D1_b/Q3_D1_decoder.vhd
+Z24 FD:/intelFPGA_lite/program/Q3_D1_b/Q3_D1_decoder.vhd
+l0
+L4
+VA0oBC8MG<60QOd@52PNXg3
+!s100 61iaWf5Un3NR3mdE[ZmfN3
+R8
+32
+Z25 !s110 1587436487
+!i10b 1
+Z26 !s108 1587436487.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q3_D1_b/Q3_D1_decoder.vhd|
+Z28 !s107 D:/intelFPGA_lite/program/Q3_D1_b/Q3_D1_decoder.vhd|
+!i113 1
+R13
+R14
+Adesign
+R3
+R4
+DEx4 work 13 q3_d1_decoder 0 22 A0oBC8MG<60QOd@52PNXg3
+l16
+L11
+VShQ>KaNiP<7kZA^@h[]_`1
+!s100 5@>_98o?@T26X?VAAdW;o1
+R8
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R13
+R14
+Eq3_d1_decoder_tst
+Z29 w1587436485
+R3
+R4
+R5
+Z30 8D:/intelFPGA_lite/program/Q3_D1_b/simulation/modelsim/Waveform1.vwf.vht
+Z31 FD:/intelFPGA_lite/program/Q3_D1_b/simulation/modelsim/Waveform1.vwf.vht
+l0
+L4
+V[TC2:z`TCcWL_RLAYgQ^?1
+!s100 ]L2^L5:?iP9FYhLZkHSVE0
+R8
+32
+Z32 !s110 1587436488
+!i10b 1
+R26
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q3_D1_b/simulation/modelsim/Waveform1.vwf.vht|
+Z34 !s107 D:/intelFPGA_lite/program/Q3_D1_b/simulation/modelsim/Waveform1.vwf.vht|
+!i113 1
+R13
+R14
+Aq3_d1_decoder_arch
+R3
+R4
+DEx4 work 17 q3_d1_decoder_tst 0 22 [TC2:z`TCcWL_RLAYgQ^?1
+l20
+L6
+VYnFS<ijBjMMT2mj34cEM`1
+!s100 `D4cK8gjNmh_]5GzZZWHn1
+R8
+32
+R32
+!i10b 1
+R26
+R33
+R34
+!i113 1
+R13
+R14
+Eq3_d1_decoder_vhd_vec_tst
+Z35 w1587434652
+R3
+R4
+R5
+R30
+R31
+l0
+L31
+V9g3[VLb>Alc579=No`bh@1
+!s100 CZOkU`9k<P;QM7RcmA2I=2
+R8
+32
+Z36 !s110 1587435609
+!i10b 1
+Z37 !s108 1587435609.000000
+R33
+R34
+!i113 1
+R13
+R14
+Aq3_d1_decoder_arch
+R3
+R4
+DEx4 work 25 q3_d1_decoder_vhd_vec_tst 0 22 9g3[VLb>Alc579=No`bh@1
+l48
+L33
+V9QGc]Za`ER2ba1n;QZMR71
+!s100 d>le9amzLKg;Q;W`W>]l_3
+R8
+32
+R36
+!i10b 1
+R37
+R33
+R34
+!i113 1
+R13
+R14
+Erobot
+Z38 w1587441919
+R3
+R4
+R5
+Z39 8D:/intelFPGA_lite/program/Q3_D2/Robot.vhd
+Z40 FD:/intelFPGA_lite/program/Q3_D2/Robot.vhd
+l0
+L4
+VYz:ZiCPXXYUWzMR4_LcCo1
+!s100 HFMM[le83PK[e0U8?^zEO3
+R8
+32
+Z41 !s110 1587442238
+!i10b 1
+Z42 !s108 1587442238.000000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q3_D2/Robot.vhd|
+Z44 !s107 D:/intelFPGA_lite/program/Q3_D2/Robot.vhd|
+!i113 1
+R13
+R14
+Adesign
+R3
+R4
+DEx4 work 5 robot 0 22 Yz:ZiCPXXYUWzMR4_LcCo1
+l15
+L10
+VB=kekm?iHnZFXW:?Fae4N2
+!s100 Y15ooR^zJa4N25BRcj5g_1
+R8
+32
+R41
+!i10b 1
+R42
+R43
+R44
+!i113 1
+R13
+R14
+Erobot_vhd_vec_tst
+Z45 w1587442774
+R3
+R4
+R5
+Z46 8D:/intelFPGA_lite/program/Q3_D2/simulation/modelsim/Waveform.vwf.vht
+Z47 FD:/intelFPGA_lite/program/Q3_D2/simulation/modelsim/Waveform.vwf.vht
+l0
+L4
+V`CMP4]ZEgDdHi>za;6:fg2
+!s100 QgO:GE2;9zn`8IEzCQhP21
+R8
+32
+Z48 !s110 1587442795
+!i10b 1
+Z49 !s108 1587442795.000000
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/intelFPGA_lite/program/Q3_D2/simulation/modelsim/Waveform.vwf.vht|
+Z51 !s107 D:/intelFPGA_lite/program/Q3_D2/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R13
+R14
+Arobot_arch
+R3
+R4
+Z52 DEx4 work 17 robot_vhd_vec_tst 0 22 `CMP4]ZEgDdHi>za;6:fg2
+l18
+L6
+VYGg93XJHEXG6zBV>@c^e;2
+!s100 mQcUg3QGGMh14aTK]ll:g1
+R8
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R13
+R14

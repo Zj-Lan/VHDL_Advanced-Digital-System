@@ -1,0 +1,315 @@
+$comment
+	File created using the following command:
+		vcd file Q3_D1_b.msim.vcd -direction
+$end
+$date
+	Tue Apr 21 00:00:27 2020
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module q3_d1_decoder_vhd_vec_tst $end
+$var wire 1 ! code_ham [6] $end
+$var wire 1 " code_ham [5] $end
+$var wire 1 # code_ham [4] $end
+$var wire 1 $ code_ham [3] $end
+$var wire 1 % code_ham [2] $end
+$var wire 1 & code_ham [1] $end
+$var wire 1 ' code_ham [0] $end
+$var wire 1 ( code_ori [3] $end
+$var wire 1 ) code_ori [2] $end
+$var wire 1 * code_ori [1] $end
+$var wire 1 + code_ori [0] $end
+$var wire 1 , parity $end
+$var wire 1 - syndrome [2] $end
+$var wire 1 . syndrome [1] $end
+$var wire 1 / syndrome [0] $end
+
+$scope module i1 $end
+$var wire 1 0 gnd $end
+$var wire 1 1 vcc $end
+$var wire 1 2 unknown $end
+$var wire 1 3 devoe $end
+$var wire 1 4 devclrn $end
+$var wire 1 5 devpor $end
+$var wire 1 6 ww_devoe $end
+$var wire 1 7 ww_devclrn $end
+$var wire 1 8 ww_devpor $end
+$var wire 1 9 ww_code_ham [6] $end
+$var wire 1 : ww_code_ham [5] $end
+$var wire 1 ; ww_code_ham [4] $end
+$var wire 1 < ww_code_ham [3] $end
+$var wire 1 = ww_code_ham [2] $end
+$var wire 1 > ww_code_ham [1] $end
+$var wire 1 ? ww_code_ham [0] $end
+$var wire 1 @ ww_parity $end
+$var wire 1 A ww_code_ori [3] $end
+$var wire 1 B ww_code_ori [2] $end
+$var wire 1 C ww_code_ori [1] $end
+$var wire 1 D ww_code_ori [0] $end
+$var wire 1 E ww_syndrome [2] $end
+$var wire 1 F ww_syndrome [1] $end
+$var wire 1 G ww_syndrome [0] $end
+$var wire 1 H \code_ori[0]~output_o\ $end
+$var wire 1 I \code_ori[1]~output_o\ $end
+$var wire 1 J \code_ori[2]~output_o\ $end
+$var wire 1 K \code_ori[3]~output_o\ $end
+$var wire 1 L \syndrome[0]~output_o\ $end
+$var wire 1 M \syndrome[1]~output_o\ $end
+$var wire 1 N \syndrome[2]~output_o\ $end
+$var wire 1 O \code_ham[2]~input_o\ $end
+$var wire 1 P \code_ham[4]~input_o\ $end
+$var wire 1 Q \code_ham[5]~input_o\ $end
+$var wire 1 R \code_ham[6]~input_o\ $end
+$var wire 1 S \code_ham[0]~input_o\ $end
+$var wire 1 T \parity~input_o\ $end
+$var wire 1 U \S1~0_combout\ $end
+$var wire 1 V \code_ham[1]~input_o\ $end
+$var wire 1 W \S2~0_combout\ $end
+$var wire 1 X \code_ham[3]~input_o\ $end
+$var wire 1 Y \S3~0_combout\ $end
+$var wire 1 Z \ALT_INV_code_ham[3]~input_o\ $end
+$var wire 1 [ \ALT_INV_code_ham[1]~input_o\ $end
+$var wire 1 \ \ALT_INV_parity~input_o\ $end
+$var wire 1 ] \ALT_INV_code_ham[0]~input_o\ $end
+$var wire 1 ^ \ALT_INV_code_ham[6]~input_o\ $end
+$var wire 1 _ \ALT_INV_code_ham[5]~input_o\ $end
+$var wire 1 ` \ALT_INV_code_ham[4]~input_o\ $end
+$var wire 1 a \ALT_INV_code_ham[2]~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+00
+11
+x2
+13
+14
+15
+16
+17
+18
+0@
+1H
+0I
+0J
+1K
+1L
+1M
+1N
+1O
+0P
+0Q
+1R
+1S
+0T
+1U
+1V
+1W
+0X
+1Y
+1Z
+0[
+1\
+0]
+0^
+1_
+1`
+0a
+1!
+0"
+0#
+0$
+1%
+1&
+1'
+19
+0:
+0;
+0<
+1=
+1>
+1?
+1A
+0B
+0C
+1D
+1E
+1F
+1G
+1(
+0)
+0*
+1+
+1-
+1.
+1/
+$end
+#125000
+1,
+1@
+1T
+0\
+0U
+0W
+0Y
+0N
+0M
+0L
+0E
+0F
+0G
+0/
+0.
+0-
+#250000
+0,
+0!
+0%
+0&
+0'
+0@
+0?
+0>
+0=
+09
+0R
+0O
+0V
+0S
+0T
+1\
+1]
+1[
+1a
+1^
+0H
+0K
+0D
+0A
+0+
+0(
+#375000
+1,
+1@
+1T
+0\
+1U
+1W
+1Y
+1N
+1M
+1L
+1E
+1F
+1G
+1/
+1.
+1-
+#500000
+0,
+1!
+1'
+1"
+0@
+1?
+1:
+19
+1R
+1Q
+1S
+0T
+1\
+0]
+0_
+0^
+0U
+0W
+0Y
+1J
+1K
+1B
+1A
+1)
+1(
+0N
+0M
+0L
+0E
+0F
+0G
+0/
+0.
+0-
+#625000
+1,
+1@
+1T
+0\
+1U
+1W
+1Y
+1N
+1M
+1L
+1E
+1F
+1G
+1/
+1.
+1-
+#750000
+0,
+0'
+0"
+1#
+1$
+0@
+0?
+1<
+1;
+0:
+0Q
+1P
+1X
+0S
+0T
+1\
+1]
+0Z
+0`
+1_
+0U
+1I
+0J
+1C
+0B
+1*
+0)
+0L
+0G
+0/
+#875000
+1,
+1@
+1T
+0\
+1U
+0W
+0Y
+0N
+0M
+1L
+0E
+0F
+1G
+1/
+0.
+0-
+#1000000

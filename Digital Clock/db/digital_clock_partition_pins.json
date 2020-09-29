@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "qout_sl[0]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sl[1]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sl[2]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sl[3]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sh[0]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sh[1]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sh[2]",
+					"strict" : false
+				},
+				{
+					"name" : "qout_sh[3]",
+					"strict" : false
+				},
+				{
+					"name" : "co",
+					"strict" : false
+				},
+				{
+					"name" : "out_do",
+					"strict" : false
+				},
+				{
+					"name" : "out_di",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_clk",
+					"strict" : false
+				},
+				{
+					"name" : "key",
+					"strict" : false
+				},
+				{
+					"name" : "clr",
+					"strict" : false
+				},
+				{
+					"name" : "enb",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

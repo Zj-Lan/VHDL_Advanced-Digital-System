@@ -1,0 +1,294 @@
+|mux16
+s0 => mux2:mux2_1.sel
+s1 => mux8:mux8_1.s0
+s1 => mux8:mux8_2.s0
+s2 => mux8:mux8_1.s1
+s2 => mux8:mux8_2.s1
+s3 => mux8:mux8_1.s2
+s3 => mux8:mux8_2.s2
+d0 => mux8:mux8_1.d0
+d1 => mux8:mux8_1.d1
+d2 => mux8:mux8_1.d2
+d3 => mux8:mux8_1.d3
+d4 => mux8:mux8_1.d4
+d5 => mux8:mux8_1.d5
+d6 => mux8:mux8_1.d6
+d7 => mux8:mux8_1.d7
+d8 => mux8:mux8_2.d0
+d9 => mux8:mux8_2.d1
+d10 => mux8:mux8_2.d2
+d11 => mux8:mux8_2.d3
+d12 => mux8:mux8_2.d4
+d13 => mux8:mux8_2.d5
+d14 => mux8:mux8_2.d6
+d15 => mux8:mux8_2.d7
+F_mux16 <= mux2:mux2_1.F_mux2
+
+
+|mux16|mux8:mux8_1
+s0 => inv:inv0.i1
+s0 => and_4:A5.a2
+s0 => and_4:A6.a2
+s0 => and_4:A7.a2
+s0 => and_4:A8.a2
+s1 => inv:inv1.i1
+s1 => and_4:A3.a3
+s1 => and_4:A4.a3
+s1 => and_4:A7.a3
+s1 => and_4:A8.a3
+s2 => inv:inv2.i1
+s2 => and_4:A2.a4
+s2 => and_4:A4.a4
+s2 => and_4:A6.a4
+s2 => and_4:A8.a4
+d0 => and_4:A1.a1
+d1 => and_4:A2.a1
+d2 => and_4:A3.a1
+d3 => and_4:A4.a1
+d4 => and_4:A5.a1
+d5 => and_4:A6.a1
+d6 => and_4:A7.a1
+d7 => and_4:A8.a1
+F_mux8 <= or_8:O1.F_or_8
+
+
+|mux16|mux8:mux8_1|inv:inv0
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|inv:inv1
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|inv:inv2
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A1
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A2
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A3
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A4
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A5
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A6
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A7
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|and_4:A8
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_1|or_8:O1
+o1 => F_or_8.IN0
+o2 => F_or_8.IN1
+o3 => F_or_8.IN1
+o4 => F_or_8.IN1
+o5 => F_or_8.IN1
+o6 => F_or_8.IN1
+o7 => F_or_8.IN1
+o8 => F_or_8.IN1
+F_or_8 <= F_or_8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2
+s0 => inv:inv0.i1
+s0 => and_4:A5.a2
+s0 => and_4:A6.a2
+s0 => and_4:A7.a2
+s0 => and_4:A8.a2
+s1 => inv:inv1.i1
+s1 => and_4:A3.a3
+s1 => and_4:A4.a3
+s1 => and_4:A7.a3
+s1 => and_4:A8.a3
+s2 => inv:inv2.i1
+s2 => and_4:A2.a4
+s2 => and_4:A4.a4
+s2 => and_4:A6.a4
+s2 => and_4:A8.a4
+d0 => and_4:A1.a1
+d1 => and_4:A2.a1
+d2 => and_4:A3.a1
+d3 => and_4:A4.a1
+d4 => and_4:A5.a1
+d5 => and_4:A6.a1
+d6 => and_4:A7.a1
+d7 => and_4:A8.a1
+F_mux8 <= or_8:O1.F_or_8
+
+
+|mux16|mux8:mux8_2|inv:inv0
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|inv:inv1
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|inv:inv2
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A1
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A2
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A3
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A4
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A5
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A6
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A7
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|and_4:A8
+a1 => F_and_4.IN0
+a2 => F_and_4.IN1
+a3 => F_and_4.IN1
+a4 => F_and_4.IN1
+F_and_4 <= F_and_4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux8:mux8_2|or_8:O1
+o1 => F_or_8.IN0
+o2 => F_or_8.IN1
+o3 => F_or_8.IN1
+o4 => F_or_8.IN1
+o5 => F_or_8.IN1
+o6 => F_or_8.IN1
+o7 => F_or_8.IN1
+o8 => F_or_8.IN1
+F_or_8 <= F_or_8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux2:mux2_1
+sel => inv:inv0.i1
+sel => and_2:A2.a2
+a => and_2:A1.a1
+b => and_2:A2.a1
+F_mux2 <= or_2:O1.F_or_2
+
+
+|mux16|mux2:mux2_1|inv:inv0
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux2:mux2_1|and_2:A1
+a1 => F_and_2.IN0
+a2 => F_and_2.IN1
+F_and_2 <= F_and_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux2:mux2_1|and_2:A2
+a1 => F_and_2.IN0
+a2 => F_and_2.IN1
+F_and_2 <= F_and_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux16|mux2:mux2_1|or_2:O1
+o1 => F_or_2.IN0
+o2 => F_or_2.IN1
+F_or_2 <= F_or_2.DB_MAX_OUTPUT_PORT_TYPE
+
+

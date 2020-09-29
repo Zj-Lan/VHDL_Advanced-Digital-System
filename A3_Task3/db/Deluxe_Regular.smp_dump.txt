@@ -1,0 +1,13 @@
+
+State Machine - |Deluxe_Regular|current_state
+Name current_state.s26 current_state.s25 current_state.s24 current_state.s23 current_state.s22 current_state.s21 current_state.s13 current_state.s12 current_state.s11 current_state.Initial 
+current_state.Initial 0 0 0 0 0 0 0 0 0 0 
+current_state.s11 0 0 0 0 0 0 0 0 1 1 
+current_state.s12 0 0 0 0 0 0 0 1 0 1 
+current_state.s13 0 0 0 0 0 0 1 0 0 1 
+current_state.s21 0 0 0 0 0 1 0 0 0 1 
+current_state.s22 0 0 0 0 1 0 0 0 0 1 
+current_state.s23 0 0 0 1 0 0 0 0 0 1 
+current_state.s24 0 0 1 0 0 0 0 0 0 1 
+current_state.s25 0 1 0 0 0 0 0 0 0 1 
+current_state.s26 1 0 0 0 0 0 0 0 0 1 

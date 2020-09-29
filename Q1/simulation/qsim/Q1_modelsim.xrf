@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/program/Q1/mux4.vhd
+source_file = 1, D:/intelFPGA_lite/program/Q1/Q1.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, D:/intelFPGA_lite/program/Q1/db/Q1.cbx.xml
+design_name = Q1
+instance = comp, \F_Q1~output\, F_Q1~output, Q1, 1
+instance = comp, \A~input\, A~input, Q1, 1
+instance = comp, \B~input\, B~input, Q1, 1
+instance = comp, \C~input\, C~input, Q1, 1
+instance = comp, \D~input\, D~input, Q1, 1
+instance = comp, \m1|F_mux4~0\, m1|F_mux4~0, Q1, 1

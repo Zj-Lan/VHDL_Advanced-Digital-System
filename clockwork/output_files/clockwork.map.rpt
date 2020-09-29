@@ -1,0 +1,1582 @@
+Analysis & Synthesis report for clockwork
+Sun Apr 12 00:20:21 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |clockwork|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div6
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Div9
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Div12
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Div10
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Div13
+ 27. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 28. Parameter Settings for Inferred Entity Instance: lpm_divide:Div7
+ 29. Parameter Settings for Inferred Entity Instance: lpm_divide:Div11
+ 30. Parameter Settings for Inferred Entity Instance: lpm_divide:Div14
+ 31. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 32. Parameter Settings for Inferred Entity Instance: lpm_divide:Div8
+ 33. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod9
+ 34. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod12
+ 35. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod10
+ 36. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod13
+ 37. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 38. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod7
+ 39. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod11
+ 40. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod14
+ 41. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 42. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod8
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Apr 12 00:20:20 2020       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; clockwork                                   ;
+; Top-level Entity Name           ; clockwork                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1016                                        ;
+; Total pins                      ; 78                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; clockwork          ; clockwork          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processor 3            ;   0.4%      ;
+;     Processor 4            ;   0.4%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; clockwork.vhd                    ; yes             ; User VHDL File               ; D:/intelFPGA_lite/program/clockwork/clockwork.vhd                          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_bpo.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/lpm_divide_bpo.tdf                  ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/abs_divider_kbg.tdf                 ;         ;
+; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/alt_u_div_ove.tdf                   ;         ;
+; db/lpm_abs_kn9.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/lpm_abs_kn9.tdf                     ;         ;
+; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/lpm_abs_4p9.tdf                     ;         ;
+; db/lpm_divide_75m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/lpm_divide_75m.tdf                  ;         ;
+; db/sign_div_unsign_anh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/sign_div_unsign_anh.tdf             ;         ;
+; db/alt_u_div_q2f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/intelFPGA_lite/program/clockwork/db/alt_u_div_q2f.tdf                   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 15884       ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 31256       ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 505         ;
+;     -- 5 input functions                    ; 421         ;
+;     -- 4 input functions                    ; 8811        ;
+;     -- <=3 input functions                  ; 21519       ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 1016        ;
+;                                             ;             ;
+; I/O pins                                    ; 78          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; chronometer ;
+; Maximum fan-out                             ; 856         ;
+; Total fan-out                               ; 102948      ;
+; Average fan-out                             ; 3.17        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |clockwork                             ; 31256 (3141)        ; 1016 (1016)               ; 0                 ; 0          ; 78   ; 0            ; |clockwork                                                                                                  ; clockwork           ; work         ;
+;    |lpm_divide:Div0|                   ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div0                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div0|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 511 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div0|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 448 (448)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div0|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div0|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div10|                  ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div10                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div10|lpm_divide_bpo:auto_generated                                                   ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 484 (33)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div10|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                           ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div10|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider     ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div10|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div11|                  ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div11                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div11|lpm_divide_bpo:auto_generated                                                   ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 484 (33)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div11|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                           ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div11|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider     ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div11|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div12|                  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div12                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div12|lpm_divide_bpo:auto_generated                                                   ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 482 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div12|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                           ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div12|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider     ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div12|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div13|                  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div13                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div13|lpm_divide_bpo:auto_generated                                                   ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 482 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div13|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                           ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div13|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider     ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div13|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div14|                  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div14                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 482 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div14|lpm_divide_bpo:auto_generated                                                   ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 482 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div14|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                           ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div14|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider     ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div14|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div1|                   ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div1                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div1|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 511 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div1|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 448 (448)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div1|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div1|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div2|                   ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div2                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div2|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 513 (62)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div2|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div2|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div2|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div3|                   ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div3                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div3|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 513 (62)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div3|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div3|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div3|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div4|                   ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div4                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div4|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 511 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div4|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 448 (448)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div4|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div4|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div5|                   ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div5                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div5|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 513 (62)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div5|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div5|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div5|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div6|                   ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div6                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 513 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div6|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 513 (62)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div6|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div6|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div6|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div7|                   ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div7                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div7|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 511 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div7|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 448 (448)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div7|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div7|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div8|                   ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div8                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 511 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div8|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 511 (31)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div8|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 448 (448)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div8|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div8|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div9|                   ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div9                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_bpo:auto_generated|  ; 484 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div9|lpm_divide_bpo:auto_generated                                                    ; lpm_divide_bpo      ; work         ;
+;          |abs_divider_kbg:divider|     ; 484 (33)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div9|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                            ; abs_divider_kbg     ; work         ;
+;             |alt_u_div_ove:divider|    ; 419 (419)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div9|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|alt_u_div_ove:divider      ; alt_u_div_ove       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Div9|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Mod0|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod0                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod0|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod0|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod0|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod10|                  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod10                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod10|lpm_divide_75m:auto_generated                                                   ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod10|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod10|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod11|                  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod11                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod11|lpm_divide_75m:auto_generated                                                   ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod11|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod11|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod12|                  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod12                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod12|lpm_divide_75m:auto_generated                                                   ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod12|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod12|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod13|                  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod13                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod13|lpm_divide_75m:auto_generated                                                   ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod13|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod13|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod14|                  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod14                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod14|lpm_divide_75m:auto_generated                                                   ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod14|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod14|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod1|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod1                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod1|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod2|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod2                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod2|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod2|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod2|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod3|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod3                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod3|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod3|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod3|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod4|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod4                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod4|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod4|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod4|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod5|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod5                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod5|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod5|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod5|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod6|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod6                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod6|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod6|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod6|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod7|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod7                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod7|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod7|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod7|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod8|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod8                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod8|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod8|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod8|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
+;    |lpm_divide:Mod9|                   ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod9                                                                                  ; lpm_divide          ; work         ;
+;       |lpm_divide_75m:auto_generated|  ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod9|lpm_divide_75m:auto_generated                                                    ; lpm_divide_75m      ; work         ;
+;          |sign_div_unsign_anh:divider| ; 1374 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod9|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider                        ; sign_div_unsign_anh ; work         ;
+;             |alt_u_div_q2f:divider|    ; 1374 (1374)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clockwork|lpm_divide:Mod9|lpm_divide_75m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_q2f:divider  ; alt_u_div_q2f       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |clockwork|state                                                                                                                            ;
++-----------------+-----------------+----------------+-------------+------------+-------------+--------------+-----------------+----------------+-------------+
+; Name            ; state.alarmhour ; state.alarmmin ; state.alarm ; state.stop ; state.start ; state.chrono ; state.clockhour ; state.clockmin ; state.clock ;
++-----------------+-----------------+----------------+-------------+------------+-------------+--------------+-----------------+----------------+-------------+
+; state.clock     ; 0               ; 0              ; 0           ; 0          ; 0           ; 0            ; 0               ; 0              ; 0           ;
+; state.clockmin  ; 0               ; 0              ; 0           ; 0          ; 0           ; 0            ; 0               ; 1              ; 1           ;
+; state.clockhour ; 0               ; 0              ; 0           ; 0          ; 0           ; 0            ; 1               ; 0              ; 1           ;
+; state.chrono    ; 0               ; 0              ; 0           ; 0          ; 0           ; 1            ; 0               ; 0              ; 1           ;
+; state.start     ; 0               ; 0              ; 0           ; 0          ; 1           ; 0            ; 0               ; 0              ; 1           ;
+; state.stop      ; 0               ; 0              ; 0           ; 1          ; 0           ; 0            ; 0               ; 0              ; 1           ;
+; state.alarm     ; 0               ; 0              ; 1           ; 0          ; 0           ; 0            ; 0               ; 0              ; 1           ;
+; state.alarmmin  ; 0               ; 1              ; 0           ; 0          ; 0           ; 0            ; 0               ; 0              ; 1           ;
+; state.alarmhour ; 1               ; 0              ; 0           ; 0          ; 0           ; 0            ; 0               ; 0              ; 1           ;
++-----------------+-----------------+----------------+-------------+------------+-------------+--------------+-----------------+----------------+-------------+
+
+
++-----------------------------------------------------------------+
+; Registers Removed During Synthesis                              ;
++---------------------------------------+-------------------------+
+; Register name                         ; Reason for Removal      ;
++---------------------------------------+-------------------------+
+; chrdig1[30]                           ; Merged with chrdig1[31] ;
+; sec1[31]                              ; Merged with sec1[30]    ;
+; chrdig3[30]                           ; Merged with chrdig3[31] ;
+; chrdig5[30]                           ; Merged with chrdig5[31] ;
+; Total Number of Removed Registers = 4 ;                         ;
++---------------------------------------+-------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1016  ;
+; Number of registers using Synchronous Clear  ; 158   ;
+; Number of registers using Synchronous Load   ; 351   ;
+; Number of registers using Asynchronous Clear ; 285   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 549   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; \clocking:count[0]                     ; 1       ;
+; \chrono_clocking:count[0]              ; 1       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |clockwork|min1[25]             ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |clockwork|hour1[1]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |clockwork|\clock_alarm:min[6]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |clockwork|\clock_alarm:hour[1] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |clockwork|display1[6]~reg0     ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |clockwork|display4[4]~reg0     ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |clockwork|display5[1]~reg0     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div6 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div9 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div12 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div10 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div13 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div7 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div11 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div14 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div8 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bpo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod9 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod12 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod10 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod13 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod7 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod11 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod14 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod8 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_75m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1016                        ;
+;     CLR               ; 190                         ;
+;     ENA               ; 198                         ;
+;     ENA CLR           ; 95                          ;
+;     ENA SLD           ; 256                         ;
+;     SCLR              ; 94                          ;
+;     SCLR SLD          ; 64                          ;
+;     SLD               ; 31                          ;
+;     plain             ; 88                          ;
+; arriav_lcell_comb     ; 31256                       ;
+;     arith             ; 14789                       ;
+;         0 data inputs ; 1770                        ;
+;         1 data inputs ; 1630                        ;
+;         2 data inputs ; 1376                        ;
+;         3 data inputs ; 5070                        ;
+;         4 data inputs ; 4943                        ;
+;     normal            ; 16317                       ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 145                         ;
+;         2 data inputs ; 9264                        ;
+;         3 data inputs ; 2113                        ;
+;         4 data inputs ; 3868                        ;
+;         5 data inputs ; 421                         ;
+;         6 data inputs ; 505                         ;
+;     shared            ; 150                         ;
+;         0 data inputs ; 45                          ;
+;         1 data inputs ; 105                         ;
+; boundary_port         ; 78                          ;
+;                       ;                             ;
+; Max LUT depth         ; 98.10                       ;
+; Average LUT depth     ; 79.16                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:33     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sun Apr 12 00:19:32 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off clockwork -c clockwork
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file clockwork.vhd
+    Info (12022): Found design unit 1: clockwork-Behavioral File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 25
+    Info (12023): Found entity 1: clockwork File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 7
+Info (12127): Elaborating entity "clockwork" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at clockwork.vhd(346): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 346
+Info (278001): Inferred 30 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 277
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 261
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 282
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 263
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div6" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 287
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 278
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 262
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 283
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 264
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod6" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 288
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 319
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div12" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 340
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div10" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 327
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 342
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 252
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div7" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 299
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div11" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 332
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div14" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 344
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 258
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div8" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 305
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 320
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod12" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 341
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod10" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 328
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 343
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 253
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod7" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 300
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod11" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 333
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod14" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 345
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 259
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod8" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 306
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div4" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 277
+Info (12133): Instantiated megafunction "lpm_divide:Div4" with the following parameter: File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 277
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bpo.tdf
+    Info (12023): Found entity 1: lpm_divide_bpo File: D:/intelFPGA_lite/program/clockwork/db/lpm_divide_bpo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: D:/intelFPGA_lite/program/clockwork/db/abs_divider_kbg.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ove.tdf
+    Info (12023): Found entity 1: alt_u_div_ove File: D:/intelFPGA_lite/program/clockwork/db/alt_u_div_ove.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_kn9.tdf
+    Info (12023): Found entity 1: lpm_abs_kn9 File: D:/intelFPGA_lite/program/clockwork/db/lpm_abs_kn9.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
+    Info (12023): Found entity 1: lpm_abs_4p9 File: D:/intelFPGA_lite/program/clockwork/db/lpm_abs_4p9.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod4" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 278
+Info (12133): Instantiated megafunction "lpm_divide:Mod4" with the following parameter: File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 278
+    Info (12134): Parameter "LPM_WIDTHN" = "33"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_75m.tdf
+    Info (12023): Found entity 1: lpm_divide_75m File: D:/intelFPGA_lite/program/clockwork/db/lpm_divide_75m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_anh File: D:/intelFPGA_lite/program/clockwork/db/sign_div_unsign_anh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_q2f.tdf
+    Info (12023): Found entity 1: alt_u_div_q2f File: D:/intelFPGA_lite/program/clockwork/db/alt_u_div_q2f.tdf Line: 22
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "chrdig2[31]" is converted into an equivalent circuit using register "chrdig2[31]~_emulated" and latch "chrdig2[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[30]" is converted into an equivalent circuit using register "chrdig2[30]~_emulated" and latch "chrdig2[30]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[29]" is converted into an equivalent circuit using register "chrdig2[29]~_emulated" and latch "chrdig2[29]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[28]" is converted into an equivalent circuit using register "chrdig2[28]~_emulated" and latch "chrdig2[28]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[27]" is converted into an equivalent circuit using register "chrdig2[27]~_emulated" and latch "chrdig2[27]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[26]" is converted into an equivalent circuit using register "chrdig2[26]~_emulated" and latch "chrdig2[26]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[25]" is converted into an equivalent circuit using register "chrdig2[25]~_emulated" and latch "chrdig2[25]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[24]" is converted into an equivalent circuit using register "chrdig2[24]~_emulated" and latch "chrdig2[24]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[23]" is converted into an equivalent circuit using register "chrdig2[23]~_emulated" and latch "chrdig2[23]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[22]" is converted into an equivalent circuit using register "chrdig2[22]~_emulated" and latch "chrdig2[22]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[21]" is converted into an equivalent circuit using register "chrdig2[21]~_emulated" and latch "chrdig2[21]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[20]" is converted into an equivalent circuit using register "chrdig2[20]~_emulated" and latch "chrdig2[20]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[19]" is converted into an equivalent circuit using register "chrdig2[19]~_emulated" and latch "chrdig2[19]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[18]" is converted into an equivalent circuit using register "chrdig2[18]~_emulated" and latch "chrdig2[18]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[17]" is converted into an equivalent circuit using register "chrdig2[17]~_emulated" and latch "chrdig2[17]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[16]" is converted into an equivalent circuit using register "chrdig2[16]~_emulated" and latch "chrdig2[16]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[15]" is converted into an equivalent circuit using register "chrdig2[15]~_emulated" and latch "chrdig2[15]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[14]" is converted into an equivalent circuit using register "chrdig2[14]~_emulated" and latch "chrdig2[14]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[13]" is converted into an equivalent circuit using register "chrdig2[13]~_emulated" and latch "chrdig2[13]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[12]" is converted into an equivalent circuit using register "chrdig2[12]~_emulated" and latch "chrdig2[12]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[11]" is converted into an equivalent circuit using register "chrdig2[11]~_emulated" and latch "chrdig2[11]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[10]" is converted into an equivalent circuit using register "chrdig2[10]~_emulated" and latch "chrdig2[10]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[9]" is converted into an equivalent circuit using register "chrdig2[9]~_emulated" and latch "chrdig2[9]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[8]" is converted into an equivalent circuit using register "chrdig2[8]~_emulated" and latch "chrdig2[8]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[7]" is converted into an equivalent circuit using register "chrdig2[7]~_emulated" and latch "chrdig2[7]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[6]" is converted into an equivalent circuit using register "chrdig2[6]~_emulated" and latch "chrdig2[6]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[5]" is converted into an equivalent circuit using register "chrdig2[5]~_emulated" and latch "chrdig2[5]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[4]" is converted into an equivalent circuit using register "chrdig2[4]~_emulated" and latch "chrdig2[4]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[3]" is converted into an equivalent circuit using register "chrdig2[3]~_emulated" and latch "chrdig2[3]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[2]" is converted into an equivalent circuit using register "chrdig2[2]~_emulated" and latch "chrdig2[2]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[1]" is converted into an equivalent circuit using register "chrdig2[1]~_emulated" and latch "chrdig2[1]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig2[0]" is converted into an equivalent circuit using register "chrdig2[0]~_emulated" and latch "chrdig2[0]~125" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[31]" is converted into an equivalent circuit using register "chrdig1[31]~_emulated" and latch "chrdig1[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[29]" is converted into an equivalent circuit using register "chrdig1[29]~_emulated" and latch "chrdig1[29]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[28]" is converted into an equivalent circuit using register "chrdig1[28]~_emulated" and latch "chrdig1[28]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[27]" is converted into an equivalent circuit using register "chrdig1[27]~_emulated" and latch "chrdig1[27]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[26]" is converted into an equivalent circuit using register "chrdig1[26]~_emulated" and latch "chrdig1[26]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[25]" is converted into an equivalent circuit using register "chrdig1[25]~_emulated" and latch "chrdig1[25]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[24]" is converted into an equivalent circuit using register "chrdig1[24]~_emulated" and latch "chrdig1[24]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[23]" is converted into an equivalent circuit using register "chrdig1[23]~_emulated" and latch "chrdig1[23]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[22]" is converted into an equivalent circuit using register "chrdig1[22]~_emulated" and latch "chrdig1[22]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[21]" is converted into an equivalent circuit using register "chrdig1[21]~_emulated" and latch "chrdig1[21]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[20]" is converted into an equivalent circuit using register "chrdig1[20]~_emulated" and latch "chrdig1[20]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[19]" is converted into an equivalent circuit using register "chrdig1[19]~_emulated" and latch "chrdig1[19]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[18]" is converted into an equivalent circuit using register "chrdig1[18]~_emulated" and latch "chrdig1[18]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[17]" is converted into an equivalent circuit using register "chrdig1[17]~_emulated" and latch "chrdig1[17]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[16]" is converted into an equivalent circuit using register "chrdig1[16]~_emulated" and latch "chrdig1[16]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[15]" is converted into an equivalent circuit using register "chrdig1[15]~_emulated" and latch "chrdig1[15]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[14]" is converted into an equivalent circuit using register "chrdig1[14]~_emulated" and latch "chrdig1[14]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[13]" is converted into an equivalent circuit using register "chrdig1[13]~_emulated" and latch "chrdig1[13]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[12]" is converted into an equivalent circuit using register "chrdig1[12]~_emulated" and latch "chrdig1[12]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[11]" is converted into an equivalent circuit using register "chrdig1[11]~_emulated" and latch "chrdig1[11]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[10]" is converted into an equivalent circuit using register "chrdig1[10]~_emulated" and latch "chrdig1[10]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[9]" is converted into an equivalent circuit using register "chrdig1[9]~_emulated" and latch "chrdig1[9]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[8]" is converted into an equivalent circuit using register "chrdig1[8]~_emulated" and latch "chrdig1[8]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[7]" is converted into an equivalent circuit using register "chrdig1[7]~_emulated" and latch "chrdig1[7]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[6]" is converted into an equivalent circuit using register "chrdig1[6]~_emulated" and latch "chrdig1[6]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[5]" is converted into an equivalent circuit using register "chrdig1[5]~_emulated" and latch "chrdig1[5]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[4]" is converted into an equivalent circuit using register "chrdig1[4]~_emulated" and latch "chrdig1[4]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[3]" is converted into an equivalent circuit using register "chrdig1[3]~_emulated" and latch "chrdig1[3]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[2]" is converted into an equivalent circuit using register "chrdig1[2]~_emulated" and latch "chrdig1[2]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[1]" is converted into an equivalent circuit using register "chrdig1[1]~_emulated" and latch "chrdig1[1]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig1[0]" is converted into an equivalent circuit using register "chrdig1[0]~_emulated" and latch "chrdig1[0]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 317
+    Warning (13310): Register "chrdig4[31]" is converted into an equivalent circuit using register "chrdig4[31]~_emulated" and latch "chrdig4[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[30]" is converted into an equivalent circuit using register "chrdig4[30]~_emulated" and latch "chrdig4[30]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[29]" is converted into an equivalent circuit using register "chrdig4[29]~_emulated" and latch "chrdig4[29]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[28]" is converted into an equivalent circuit using register "chrdig4[28]~_emulated" and latch "chrdig4[28]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[27]" is converted into an equivalent circuit using register "chrdig4[27]~_emulated" and latch "chrdig4[27]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[26]" is converted into an equivalent circuit using register "chrdig4[26]~_emulated" and latch "chrdig4[26]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[25]" is converted into an equivalent circuit using register "chrdig4[25]~_emulated" and latch "chrdig4[25]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[24]" is converted into an equivalent circuit using register "chrdig4[24]~_emulated" and latch "chrdig4[24]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[23]" is converted into an equivalent circuit using register "chrdig4[23]~_emulated" and latch "chrdig4[23]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[22]" is converted into an equivalent circuit using register "chrdig4[22]~_emulated" and latch "chrdig4[22]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[21]" is converted into an equivalent circuit using register "chrdig4[21]~_emulated" and latch "chrdig4[21]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[20]" is converted into an equivalent circuit using register "chrdig4[20]~_emulated" and latch "chrdig4[20]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[19]" is converted into an equivalent circuit using register "chrdig4[19]~_emulated" and latch "chrdig4[19]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[18]" is converted into an equivalent circuit using register "chrdig4[18]~_emulated" and latch "chrdig4[18]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[17]" is converted into an equivalent circuit using register "chrdig4[17]~_emulated" and latch "chrdig4[17]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[16]" is converted into an equivalent circuit using register "chrdig4[16]~_emulated" and latch "chrdig4[16]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[15]" is converted into an equivalent circuit using register "chrdig4[15]~_emulated" and latch "chrdig4[15]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[14]" is converted into an equivalent circuit using register "chrdig4[14]~_emulated" and latch "chrdig4[14]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[13]" is converted into an equivalent circuit using register "chrdig4[13]~_emulated" and latch "chrdig4[13]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[12]" is converted into an equivalent circuit using register "chrdig4[12]~_emulated" and latch "chrdig4[12]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[11]" is converted into an equivalent circuit using register "chrdig4[11]~_emulated" and latch "chrdig4[11]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[10]" is converted into an equivalent circuit using register "chrdig4[10]~_emulated" and latch "chrdig4[10]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[9]" is converted into an equivalent circuit using register "chrdig4[9]~_emulated" and latch "chrdig4[9]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[8]" is converted into an equivalent circuit using register "chrdig4[8]~_emulated" and latch "chrdig4[8]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[7]" is converted into an equivalent circuit using register "chrdig4[7]~_emulated" and latch "chrdig4[7]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[6]" is converted into an equivalent circuit using register "chrdig4[6]~_emulated" and latch "chrdig4[6]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[5]" is converted into an equivalent circuit using register "chrdig4[5]~_emulated" and latch "chrdig4[5]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[4]" is converted into an equivalent circuit using register "chrdig4[4]~_emulated" and latch "chrdig4[4]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[3]" is converted into an equivalent circuit using register "chrdig4[3]~_emulated" and latch "chrdig4[3]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[2]" is converted into an equivalent circuit using register "chrdig4[2]~_emulated" and latch "chrdig4[2]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[1]" is converted into an equivalent circuit using register "chrdig4[1]~_emulated" and latch "chrdig4[1]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig4[0]" is converted into an equivalent circuit using register "chrdig4[0]~_emulated" and latch "chrdig4[0]~125" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[31]" is converted into an equivalent circuit using register "chrdig3[31]~_emulated" and latch "chrdig3[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[29]" is converted into an equivalent circuit using register "chrdig3[29]~_emulated" and latch "chrdig3[29]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[28]" is converted into an equivalent circuit using register "chrdig3[28]~_emulated" and latch "chrdig3[28]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[27]" is converted into an equivalent circuit using register "chrdig3[27]~_emulated" and latch "chrdig3[27]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[26]" is converted into an equivalent circuit using register "chrdig3[26]~_emulated" and latch "chrdig3[26]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[25]" is converted into an equivalent circuit using register "chrdig3[25]~_emulated" and latch "chrdig3[25]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[24]" is converted into an equivalent circuit using register "chrdig3[24]~_emulated" and latch "chrdig3[24]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[23]" is converted into an equivalent circuit using register "chrdig3[23]~_emulated" and latch "chrdig3[23]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[22]" is converted into an equivalent circuit using register "chrdig3[22]~_emulated" and latch "chrdig3[22]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[21]" is converted into an equivalent circuit using register "chrdig3[21]~_emulated" and latch "chrdig3[21]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[20]" is converted into an equivalent circuit using register "chrdig3[20]~_emulated" and latch "chrdig3[20]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[19]" is converted into an equivalent circuit using register "chrdig3[19]~_emulated" and latch "chrdig3[19]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[18]" is converted into an equivalent circuit using register "chrdig3[18]~_emulated" and latch "chrdig3[18]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[17]" is converted into an equivalent circuit using register "chrdig3[17]~_emulated" and latch "chrdig3[17]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[16]" is converted into an equivalent circuit using register "chrdig3[16]~_emulated" and latch "chrdig3[16]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[15]" is converted into an equivalent circuit using register "chrdig3[15]~_emulated" and latch "chrdig3[15]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[14]" is converted into an equivalent circuit using register "chrdig3[14]~_emulated" and latch "chrdig3[14]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[13]" is converted into an equivalent circuit using register "chrdig3[13]~_emulated" and latch "chrdig3[13]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[12]" is converted into an equivalent circuit using register "chrdig3[12]~_emulated" and latch "chrdig3[12]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[11]" is converted into an equivalent circuit using register "chrdig3[11]~_emulated" and latch "chrdig3[11]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[10]" is converted into an equivalent circuit using register "chrdig3[10]~_emulated" and latch "chrdig3[10]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[9]" is converted into an equivalent circuit using register "chrdig3[9]~_emulated" and latch "chrdig3[9]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[8]" is converted into an equivalent circuit using register "chrdig3[8]~_emulated" and latch "chrdig3[8]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[7]" is converted into an equivalent circuit using register "chrdig3[7]~_emulated" and latch "chrdig3[7]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[6]" is converted into an equivalent circuit using register "chrdig3[6]~_emulated" and latch "chrdig3[6]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[5]" is converted into an equivalent circuit using register "chrdig3[5]~_emulated" and latch "chrdig3[5]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[4]" is converted into an equivalent circuit using register "chrdig3[4]~_emulated" and latch "chrdig3[4]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[3]" is converted into an equivalent circuit using register "chrdig3[3]~_emulated" and latch "chrdig3[3]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[2]" is converted into an equivalent circuit using register "chrdig3[2]~_emulated" and latch "chrdig3[2]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[1]" is converted into an equivalent circuit using register "chrdig3[1]~_emulated" and latch "chrdig3[1]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig3[0]" is converted into an equivalent circuit using register "chrdig3[0]~_emulated" and latch "chrdig3[0]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[31]" is converted into an equivalent circuit using register "chrdig6[31]~_emulated" and latch "chrdig6[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[30]" is converted into an equivalent circuit using register "chrdig6[30]~_emulated" and latch "chrdig6[30]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[29]" is converted into an equivalent circuit using register "chrdig6[29]~_emulated" and latch "chrdig6[29]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[28]" is converted into an equivalent circuit using register "chrdig6[28]~_emulated" and latch "chrdig6[28]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[27]" is converted into an equivalent circuit using register "chrdig6[27]~_emulated" and latch "chrdig6[27]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[26]" is converted into an equivalent circuit using register "chrdig6[26]~_emulated" and latch "chrdig6[26]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[25]" is converted into an equivalent circuit using register "chrdig6[25]~_emulated" and latch "chrdig6[25]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[24]" is converted into an equivalent circuit using register "chrdig6[24]~_emulated" and latch "chrdig6[24]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[23]" is converted into an equivalent circuit using register "chrdig6[23]~_emulated" and latch "chrdig6[23]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[22]" is converted into an equivalent circuit using register "chrdig6[22]~_emulated" and latch "chrdig6[22]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[21]" is converted into an equivalent circuit using register "chrdig6[21]~_emulated" and latch "chrdig6[21]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[20]" is converted into an equivalent circuit using register "chrdig6[20]~_emulated" and latch "chrdig6[20]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[19]" is converted into an equivalent circuit using register "chrdig6[19]~_emulated" and latch "chrdig6[19]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[18]" is converted into an equivalent circuit using register "chrdig6[18]~_emulated" and latch "chrdig6[18]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[17]" is converted into an equivalent circuit using register "chrdig6[17]~_emulated" and latch "chrdig6[17]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[16]" is converted into an equivalent circuit using register "chrdig6[16]~_emulated" and latch "chrdig6[16]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[15]" is converted into an equivalent circuit using register "chrdig6[15]~_emulated" and latch "chrdig6[15]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[14]" is converted into an equivalent circuit using register "chrdig6[14]~_emulated" and latch "chrdig6[14]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[13]" is converted into an equivalent circuit using register "chrdig6[13]~_emulated" and latch "chrdig6[13]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[12]" is converted into an equivalent circuit using register "chrdig6[12]~_emulated" and latch "chrdig6[12]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[11]" is converted into an equivalent circuit using register "chrdig6[11]~_emulated" and latch "chrdig6[11]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[10]" is converted into an equivalent circuit using register "chrdig6[10]~_emulated" and latch "chrdig6[10]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[9]" is converted into an equivalent circuit using register "chrdig6[9]~_emulated" and latch "chrdig6[9]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[8]" is converted into an equivalent circuit using register "chrdig6[8]~_emulated" and latch "chrdig6[8]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[7]" is converted into an equivalent circuit using register "chrdig6[7]~_emulated" and latch "chrdig6[7]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[6]" is converted into an equivalent circuit using register "chrdig6[6]~_emulated" and latch "chrdig6[6]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[5]" is converted into an equivalent circuit using register "chrdig6[5]~_emulated" and latch "chrdig6[5]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[4]" is converted into an equivalent circuit using register "chrdig6[4]~_emulated" and latch "chrdig6[4]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[3]" is converted into an equivalent circuit using register "chrdig6[3]~_emulated" and latch "chrdig6[3]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[2]" is converted into an equivalent circuit using register "chrdig6[2]~_emulated" and latch "chrdig6[2]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[1]" is converted into an equivalent circuit using register "chrdig6[1]~_emulated" and latch "chrdig6[1]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig6[0]" is converted into an equivalent circuit using register "chrdig6[0]~_emulated" and latch "chrdig6[0]~125" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[31]" is converted into an equivalent circuit using register "chrdig5[31]~_emulated" and latch "chrdig5[31]~1" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[29]" is converted into an equivalent circuit using register "chrdig5[29]~_emulated" and latch "chrdig5[29]~5" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[28]" is converted into an equivalent circuit using register "chrdig5[28]~_emulated" and latch "chrdig5[28]~9" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[27]" is converted into an equivalent circuit using register "chrdig5[27]~_emulated" and latch "chrdig5[27]~13" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[26]" is converted into an equivalent circuit using register "chrdig5[26]~_emulated" and latch "chrdig5[26]~17" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[25]" is converted into an equivalent circuit using register "chrdig5[25]~_emulated" and latch "chrdig5[25]~21" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[24]" is converted into an equivalent circuit using register "chrdig5[24]~_emulated" and latch "chrdig5[24]~25" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[23]" is converted into an equivalent circuit using register "chrdig5[23]~_emulated" and latch "chrdig5[23]~29" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[22]" is converted into an equivalent circuit using register "chrdig5[22]~_emulated" and latch "chrdig5[22]~33" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[21]" is converted into an equivalent circuit using register "chrdig5[21]~_emulated" and latch "chrdig5[21]~37" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[20]" is converted into an equivalent circuit using register "chrdig5[20]~_emulated" and latch "chrdig5[20]~41" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[19]" is converted into an equivalent circuit using register "chrdig5[19]~_emulated" and latch "chrdig5[19]~45" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[18]" is converted into an equivalent circuit using register "chrdig5[18]~_emulated" and latch "chrdig5[18]~49" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[17]" is converted into an equivalent circuit using register "chrdig5[17]~_emulated" and latch "chrdig5[17]~53" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[16]" is converted into an equivalent circuit using register "chrdig5[16]~_emulated" and latch "chrdig5[16]~57" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[15]" is converted into an equivalent circuit using register "chrdig5[15]~_emulated" and latch "chrdig5[15]~61" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[14]" is converted into an equivalent circuit using register "chrdig5[14]~_emulated" and latch "chrdig5[14]~65" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[13]" is converted into an equivalent circuit using register "chrdig5[13]~_emulated" and latch "chrdig5[13]~69" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[12]" is converted into an equivalent circuit using register "chrdig5[12]~_emulated" and latch "chrdig5[12]~73" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[11]" is converted into an equivalent circuit using register "chrdig5[11]~_emulated" and latch "chrdig5[11]~77" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[10]" is converted into an equivalent circuit using register "chrdig5[10]~_emulated" and latch "chrdig5[10]~81" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[9]" is converted into an equivalent circuit using register "chrdig5[9]~_emulated" and latch "chrdig5[9]~85" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[8]" is converted into an equivalent circuit using register "chrdig5[8]~_emulated" and latch "chrdig5[8]~89" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[7]" is converted into an equivalent circuit using register "chrdig5[7]~_emulated" and latch "chrdig5[7]~93" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[6]" is converted into an equivalent circuit using register "chrdig5[6]~_emulated" and latch "chrdig5[6]~97" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[5]" is converted into an equivalent circuit using register "chrdig5[5]~_emulated" and latch "chrdig5[5]~101" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[4]" is converted into an equivalent circuit using register "chrdig5[4]~_emulated" and latch "chrdig5[4]~105" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[3]" is converted into an equivalent circuit using register "chrdig5[3]~_emulated" and latch "chrdig5[3]~109" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[2]" is converted into an equivalent circuit using register "chrdig5[2]~_emulated" and latch "chrdig5[2]~113" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[1]" is converted into an equivalent circuit using register "chrdig5[1]~_emulated" and latch "chrdig5[1]~117" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "chrdig5[0]" is converted into an equivalent circuit using register "chrdig5[0]~_emulated" and latch "chrdig5[0]~121" File: D:/intelFPGA_lite/program/clockwork/clockwork.vhd Line: 325
+    Warning (13310): Register "\chronos_time:mili[31]" is converted into an equivalent circuit using register "\chronos_time:mili[31]~_emulated" and latch "\chronos_time:mili[31]~1"
+    Warning (13310): Register "\chronos_time:sec[31]" is converted into an equivalent circuit using register "\chronos_time:sec[31]~_emulated" and latch "\chronos_time:sec[31]~1"
+    Warning (13310): Register "\chronos_time:min[31]" is converted into an equivalent circuit using register "\chronos_time:min[31]~_emulated" and latch "\chronos_time:min[31]~1"
+    Warning (13310): Register "\chronos_time:sec[0]" is converted into an equivalent circuit using register "\chronos_time:sec[0]~_emulated" and latch "\chronos_time:sec[0]~1"
+    Warning (13310): Register "\chronos_time:sec[1]" is converted into an equivalent circuit using register "\chronos_time:sec[1]~_emulated" and latch "\chronos_time:sec[1]~1"
+    Warning (13310): Register "\chronos_time:sec[2]" is converted into an equivalent circuit using register "\chronos_time:sec[2]~_emulated" and latch "\chronos_time:sec[2]~1"
+    Warning (13310): Register "\chronos_time:sec[3]" is converted into an equivalent circuit using register "\chronos_time:sec[3]~_emulated" and latch "\chronos_time:sec[3]~1"
+    Warning (13310): Register "\chronos_time:sec[4]" is converted into an equivalent circuit using register "\chronos_time:sec[4]~_emulated" and latch "\chronos_time:sec[4]~1"
+    Warning (13310): Register "\chronos_time:sec[5]" is converted into an equivalent circuit using register "\chronos_time:sec[5]~_emulated" and latch "\chronos_time:sec[5]~1"
+    Warning (13310): Register "\chronos_time:sec[6]" is converted into an equivalent circuit using register "\chronos_time:sec[6]~_emulated" and latch "\chronos_time:sec[6]~1"
+    Warning (13310): Register "\chronos_time:sec[7]" is converted into an equivalent circuit using register "\chronos_time:sec[7]~_emulated" and latch "\chronos_time:sec[7]~1"
+    Warning (13310): Register "\chronos_time:sec[8]" is converted into an equivalent circuit using register "\chronos_time:sec[8]~_emulated" and latch "\chronos_time:sec[8]~1"
+    Warning (13310): Register "\chronos_time:sec[9]" is converted into an equivalent circuit using register "\chronos_time:sec[9]~_emulated" and latch "\chronos_time:sec[9]~1"
+    Warning (13310): Register "\chronos_time:sec[10]" is converted into an equivalent circuit using register "\chronos_time:sec[10]~_emulated" and latch "\chronos_time:sec[10]~1"
+    Warning (13310): Register "\chronos_time:sec[11]" is converted into an equivalent circuit using register "\chronos_time:sec[11]~_emulated" and latch "\chronos_time:sec[11]~1"
+    Warning (13310): Register "\chronos_time:sec[12]" is converted into an equivalent circuit using register "\chronos_time:sec[12]~_emulated" and latch "\chronos_time:sec[12]~1"
+    Warning (13310): Register "\chronos_time:sec[13]" is converted into an equivalent circuit using register "\chronos_time:sec[13]~_emulated" and latch "\chronos_time:sec[13]~1"
+    Warning (13310): Register "\chronos_time:sec[14]" is converted into an equivalent circuit using register "\chronos_time:sec[14]~_emulated" and latch "\chronos_time:sec[14]~1"
+    Warning (13310): Register "\chronos_time:sec[15]" is converted into an equivalent circuit using register "\chronos_time:sec[15]~_emulated" and latch "\chronos_time:sec[15]~1"
+    Warning (13310): Register "\chronos_time:sec[16]" is converted into an equivalent circuit using register "\chronos_time:sec[16]~_emulated" and latch "\chronos_time:sec[16]~1"
+    Warning (13310): Register "\chronos_time:sec[17]" is converted into an equivalent circuit using register "\chronos_time:sec[17]~_emulated" and latch "\chronos_time:sec[17]~1"
+    Warning (13310): Register "\chronos_time:sec[18]" is converted into an equivalent circuit using register "\chronos_time:sec[18]~_emulated" and latch "\chronos_time:sec[18]~1"
+    Warning (13310): Register "\chronos_time:sec[19]" is converted into an equivalent circuit using register "\chronos_time:sec[19]~_emulated" and latch "\chronos_time:sec[19]~1"
+    Warning (13310): Register "\chronos_time:sec[20]" is converted into an equivalent circuit using register "\chronos_time:sec[20]~_emulated" and latch "\chronos_time:sec[20]~1"
+    Warning (13310): Register "\chronos_time:sec[21]" is converted into an equivalent circuit using register "\chronos_time:sec[21]~_emulated" and latch "\chronos_time:sec[21]~1"
+    Warning (13310): Register "\chronos_time:sec[22]" is converted into an equivalent circuit using register "\chronos_time:sec[22]~_emulated" and latch "\chronos_time:sec[22]~1"
+    Warning (13310): Register "\chronos_time:sec[23]" is converted into an equivalent circuit using register "\chronos_time:sec[23]~_emulated" and latch "\chronos_time:sec[23]~1"
+    Warning (13310): Register "\chronos_time:sec[24]" is converted into an equivalent circuit using register "\chronos_time:sec[24]~_emulated" and latch "\chronos_time:sec[24]~1"
+    Warning (13310): Register "\chronos_time:sec[25]" is converted into an equivalent circuit using register "\chronos_time:sec[25]~_emulated" and latch "\chronos_time:sec[25]~1"
+    Warning (13310): Register "\chronos_time:sec[26]" is converted into an equivalent circuit using register "\chronos_time:sec[26]~_emulated" and latch "\chronos_time:sec[26]~1"
+    Warning (13310): Register "\chronos_time:sec[27]" is converted into an equivalent circuit using register "\chronos_time:sec[27]~_emulated" and latch "\chronos_time:sec[27]~1"
+    Warning (13310): Register "\chronos_time:sec[28]" is converted into an equivalent circuit using register "\chronos_time:sec[28]~_emulated" and latch "\chronos_time:sec[28]~1"
+    Warning (13310): Register "\chronos_time:sec[29]" is converted into an equivalent circuit using register "\chronos_time:sec[29]~_emulated" and latch "\chronos_time:sec[29]~1"
+    Warning (13310): Register "\chronos_time:sec[30]" is converted into an equivalent circuit using register "\chronos_time:sec[30]~_emulated" and latch "\chronos_time:sec[30]~1"
+    Warning (13310): Register "\chronos_time:mili[30]" is converted into an equivalent circuit using register "\chronos_time:mili[30]~_emulated" and latch "\chronos_time:mili[30]~1"
+    Warning (13310): Register "\chronos_time:mili[29]" is converted into an equivalent circuit using register "\chronos_time:mili[29]~_emulated" and latch "\chronos_time:mili[29]~1"
+    Warning (13310): Register "\chronos_time:mili[28]" is converted into an equivalent circuit using register "\chronos_time:mili[28]~_emulated" and latch "\chronos_time:mili[28]~1"
+    Warning (13310): Register "\chronos_time:mili[27]" is converted into an equivalent circuit using register "\chronos_time:mili[27]~_emulated" and latch "\chronos_time:mili[27]~1"
+    Warning (13310): Register "\chronos_time:mili[26]" is converted into an equivalent circuit using register "\chronos_time:mili[26]~_emulated" and latch "\chronos_time:mili[26]~1"
+    Warning (13310): Register "\chronos_time:mili[25]" is converted into an equivalent circuit using register "\chronos_time:mili[25]~_emulated" and latch "\chronos_time:mili[25]~1"
+    Warning (13310): Register "\chronos_time:mili[24]" is converted into an equivalent circuit using register "\chronos_time:mili[24]~_emulated" and latch "\chronos_time:mili[24]~1"
+    Warning (13310): Register "\chronos_time:mili[23]" is converted into an equivalent circuit using register "\chronos_time:mili[23]~_emulated" and latch "\chronos_time:mili[23]~1"
+    Warning (13310): Register "\chronos_time:mili[22]" is converted into an equivalent circuit using register "\chronos_time:mili[22]~_emulated" and latch "\chronos_time:mili[22]~1"
+    Warning (13310): Register "\chronos_time:mili[21]" is converted into an equivalent circuit using register "\chronos_time:mili[21]~_emulated" and latch "\chronos_time:mili[21]~1"
+    Warning (13310): Register "\chronos_time:mili[20]" is converted into an equivalent circuit using register "\chronos_time:mili[20]~_emulated" and latch "\chronos_time:mili[20]~1"
+    Warning (13310): Register "\chronos_time:mili[19]" is converted into an equivalent circuit using register "\chronos_time:mili[19]~_emulated" and latch "\chronos_time:mili[19]~1"
+    Warning (13310): Register "\chronos_time:mili[18]" is converted into an equivalent circuit using register "\chronos_time:mili[18]~_emulated" and latch "\chronos_time:mili[18]~1"
+    Warning (13310): Register "\chronos_time:mili[17]" is converted into an equivalent circuit using register "\chronos_time:mili[17]~_emulated" and latch "\chronos_time:mili[17]~1"
+    Warning (13310): Register "\chronos_time:mili[16]" is converted into an equivalent circuit using register "\chronos_time:mili[16]~_emulated" and latch "\chronos_time:mili[16]~1"
+    Warning (13310): Register "\chronos_time:mili[15]" is converted into an equivalent circuit using register "\chronos_time:mili[15]~_emulated" and latch "\chronos_time:mili[15]~1"
+    Warning (13310): Register "\chronos_time:mili[14]" is converted into an equivalent circuit using register "\chronos_time:mili[14]~_emulated" and latch "\chronos_time:mili[14]~1"
+    Warning (13310): Register "\chronos_time:mili[13]" is converted into an equivalent circuit using register "\chronos_time:mili[13]~_emulated" and latch "\chronos_time:mili[13]~1"
+    Warning (13310): Register "\chronos_time:mili[12]" is converted into an equivalent circuit using register "\chronos_time:mili[12]~_emulated" and latch "\chronos_time:mili[12]~1"
+    Warning (13310): Register "\chronos_time:mili[11]" is converted into an equivalent circuit using register "\chronos_time:mili[11]~_emulated" and latch "\chronos_time:mili[11]~1"
+    Warning (13310): Register "\chronos_time:mili[10]" is converted into an equivalent circuit using register "\chronos_time:mili[10]~_emulated" and latch "\chronos_time:mili[10]~1"
+    Warning (13310): Register "\chronos_time:mili[9]" is converted into an equivalent circuit using register "\chronos_time:mili[9]~_emulated" and latch "\chronos_time:mili[9]~1"
+    Warning (13310): Register "\chronos_time:mili[8]" is converted into an equivalent circuit using register "\chronos_time:mili[8]~_emulated" and latch "\chronos_time:mili[8]~1"
+    Warning (13310): Register "\chronos_time:mili[7]" is converted into an equivalent circuit using register "\chronos_time:mili[7]~_emulated" and latch "\chronos_time:mili[7]~1"
+    Warning (13310): Register "\chronos_time:mili[6]" is converted into an equivalent circuit using register "\chronos_time:mili[6]~_emulated" and latch "\chronos_time:mili[6]~1"
+    Warning (13310): Register "\chronos_time:mili[5]" is converted into an equivalent circuit using register "\chronos_time:mili[5]~_emulated" and latch "\chronos_time:mili[5]~1"
+    Warning (13310): Register "\chronos_time:mili[4]" is converted into an equivalent circuit using register "\chronos_time:mili[4]~_emulated" and latch "\chronos_time:mili[4]~1"
+    Warning (13310): Register "\chronos_time:mili[3]" is converted into an equivalent circuit using register "\chronos_time:mili[3]~_emulated" and latch "\chronos_time:mili[3]~1"
+    Warning (13310): Register "\chronos_time:mili[2]" is converted into an equivalent circuit using register "\chronos_time:mili[2]~_emulated" and latch "\chronos_time:mili[2]~1"
+    Warning (13310): Register "\chronos_time:mili[1]" is converted into an equivalent circuit using register "\chronos_time:mili[1]~_emulated" and latch "\chronos_time:mili[1]~1"
+    Warning (13310): Register "\chronos_time:mili[0]" is converted into an equivalent circuit using register "\chronos_time:mili[0]~_emulated" and latch "\chronos_time:mili[0]~1"
+    Warning (13310): Register "\chronos_time:min[30]" is converted into an equivalent circuit using register "\chronos_time:min[30]~_emulated" and latch "\chronos_time:min[30]~1"
+    Warning (13310): Register "\chronos_time:min[29]" is converted into an equivalent circuit using register "\chronos_time:min[29]~_emulated" and latch "\chronos_time:min[29]~1"
+    Warning (13310): Register "\chronos_time:min[28]" is converted into an equivalent circuit using register "\chronos_time:min[28]~_emulated" and latch "\chronos_time:min[28]~1"
+    Warning (13310): Register "\chronos_time:min[27]" is converted into an equivalent circuit using register "\chronos_time:min[27]~_emulated" and latch "\chronos_time:min[27]~1"
+    Warning (13310): Register "\chronos_time:min[26]" is converted into an equivalent circuit using register "\chronos_time:min[26]~_emulated" and latch "\chronos_time:min[26]~1"
+    Warning (13310): Register "\chronos_time:min[25]" is converted into an equivalent circuit using register "\chronos_time:min[25]~_emulated" and latch "\chronos_time:min[25]~1"
+    Warning (13310): Register "\chronos_time:min[24]" is converted into an equivalent circuit using register "\chronos_time:min[24]~_emulated" and latch "\chronos_time:min[24]~1"
+    Warning (13310): Register "\chronos_time:min[23]" is converted into an equivalent circuit using register "\chronos_time:min[23]~_emulated" and latch "\chronos_time:min[23]~1"
+    Warning (13310): Register "\chronos_time:min[22]" is converted into an equivalent circuit using register "\chronos_time:min[22]~_emulated" and latch "\chronos_time:min[22]~1"
+    Warning (13310): Register "\chronos_time:min[21]" is converted into an equivalent circuit using register "\chronos_time:min[21]~_emulated" and latch "\chronos_time:min[21]~1"
+    Warning (13310): Register "\chronos_time:min[20]" is converted into an equivalent circuit using register "\chronos_time:min[20]~_emulated" and latch "\chronos_time:min[20]~1"
+    Warning (13310): Register "\chronos_time:min[19]" is converted into an equivalent circuit using register "\chronos_time:min[19]~_emulated" and latch "\chronos_time:min[19]~1"
+    Warning (13310): Register "\chronos_time:min[18]" is converted into an equivalent circuit using register "\chronos_time:min[18]~_emulated" and latch "\chronos_time:min[18]~1"
+    Warning (13310): Register "\chronos_time:min[17]" is converted into an equivalent circuit using register "\chronos_time:min[17]~_emulated" and latch "\chronos_time:min[17]~1"
+    Warning (13310): Register "\chronos_time:min[16]" is converted into an equivalent circuit using register "\chronos_time:min[16]~_emulated" and latch "\chronos_time:min[16]~1"
+    Warning (13310): Register "\chronos_time:min[15]" is converted into an equivalent circuit using register "\chronos_time:min[15]~_emulated" and latch "\chronos_time:min[15]~1"
+    Warning (13310): Register "\chronos_time:min[14]" is converted into an equivalent circuit using register "\chronos_time:min[14]~_emulated" and latch "\chronos_time:min[14]~1"
+    Warning (13310): Register "\chronos_time:min[13]" is converted into an equivalent circuit using register "\chronos_time:min[13]~_emulated" and latch "\chronos_time:min[13]~1"
+    Warning (13310): Register "\chronos_time:min[12]" is converted into an equivalent circuit using register "\chronos_time:min[12]~_emulated" and latch "\chronos_time:min[12]~1"
+    Warning (13310): Register "\chronos_time:min[11]" is converted into an equivalent circuit using register "\chronos_time:min[11]~_emulated" and latch "\chronos_time:min[11]~1"
+    Warning (13310): Register "\chronos_time:min[10]" is converted into an equivalent circuit using register "\chronos_time:min[10]~_emulated" and latch "\chronos_time:min[10]~1"
+    Warning (13310): Register "\chronos_time:min[9]" is converted into an equivalent circuit using register "\chronos_time:min[9]~_emulated" and latch "\chronos_time:min[9]~1"
+    Warning (13310): Register "\chronos_time:min[8]" is converted into an equivalent circuit using register "\chronos_time:min[8]~_emulated" and latch "\chronos_time:min[8]~1"
+    Warning (13310): Register "\chronos_time:min[7]" is converted into an equivalent circuit using register "\chronos_time:min[7]~_emulated" and latch "\chronos_time:min[7]~1"
+    Warning (13310): Register "\chronos_time:min[6]" is converted into an equivalent circuit using register "\chronos_time:min[6]~_emulated" and latch "\chronos_time:min[6]~1"
+    Warning (13310): Register "\chronos_time:min[5]" is converted into an equivalent circuit using register "\chronos_time:min[5]~_emulated" and latch "\chronos_time:min[5]~1"
+    Warning (13310): Register "\chronos_time:min[4]" is converted into an equivalent circuit using register "\chronos_time:min[4]~_emulated" and latch "\chronos_time:min[4]~1"
+    Warning (13310): Register "\chronos_time:min[3]" is converted into an equivalent circuit using register "\chronos_time:min[3]~_emulated" and latch "\chronos_time:min[3]~1"
+    Warning (13310): Register "\chronos_time:min[2]" is converted into an equivalent circuit using register "\chronos_time:min[2]~_emulated" and latch "\chronos_time:min[2]~1"
+    Warning (13310): Register "\chronos_time:min[1]" is converted into an equivalent circuit using register "\chronos_time:min[1]~_emulated" and latch "\chronos_time:min[1]~1"
+    Warning (13310): Register "\chronos_time:min[0]" is converted into an equivalent circuit using register "\chronos_time:min[0]~_emulated" and latch "\chronos_time:min[0]~1"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 31571 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 31493 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 288 warnings
+    Info: Peak virtual memory: 917 megabytes
+    Info: Processing ended: Sun Apr 12 00:20:21 2020
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:01:03
+
+

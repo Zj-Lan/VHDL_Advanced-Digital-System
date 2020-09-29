@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "HSync",
+					"strict" : false
+				},
+				{
+					"name" : "VSync",
+					"strict" : false
+				},
+				{
+					"name" : "Red[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Red[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Red[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Green[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Green[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Green[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Blue[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Blue[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk50MHz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

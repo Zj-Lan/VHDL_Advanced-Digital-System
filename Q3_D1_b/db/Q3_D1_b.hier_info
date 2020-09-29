@@ -1,0 +1,29 @@
+|Q3_D1_decoder
+code_ham[0] => S1.IN0
+code_ham[1] => S2.IN0
+code_ham[2] => S2.IN1
+code_ham[2] => S1.IN1
+code_ham[2] => code_ori[0].DATAIN
+code_ham[3] => S3.IN0
+code_ham[4] => S3.IN1
+code_ham[4] => S1.IN1
+code_ham[4] => code_ori[1].DATAIN
+code_ham[5] => S3.IN1
+code_ham[5] => S2.IN1
+code_ham[5] => code_ori[2].DATAIN
+code_ham[6] => S3.IN1
+code_ham[6] => S2.IN1
+code_ham[6] => S1.IN1
+code_ham[6] => code_ori[3].DATAIN
+parity => S3.OUTPUTSELECT
+parity => S2.OUTPUTSELECT
+parity => S1.OUTPUTSELECT
+code_ori[0] <= code_ham[2].DB_MAX_OUTPUT_PORT_TYPE
+code_ori[1] <= code_ham[4].DB_MAX_OUTPUT_PORT_TYPE
+code_ori[2] <= code_ham[5].DB_MAX_OUTPUT_PORT_TYPE
+code_ori[3] <= code_ham[6].DB_MAX_OUTPUT_PORT_TYPE
+syndrome[0] <= S1.DB_MAX_OUTPUT_PORT_TYPE
+syndrome[1] <= S2.DB_MAX_OUTPUT_PORT_TYPE
+syndrome[2] <= S3.DB_MAX_OUTPUT_PORT_TYPE
+
+

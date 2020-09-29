@@ -1,0 +1,43 @@
+|Q1_b
+clk => T_FF:T1.clk
+clk => T_FF:T2.clk
+
+
+|Q1_b|T_FF:T1
+clk => temp_Q.CLK
+T => temp_Q.OUTPUTSELECT
+T => temp_Q.ENA
+Q <= temp_Q.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= inv:iv1.F_inv
+
+
+|Q1_b|T_FF:T1|inv:iv1
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Q1_b|T_FF:T2
+clk => temp_Q.CLK
+T => temp_Q.OUTPUTSELECT
+T => temp_Q.ENA
+Q <= temp_Q.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= inv:iv1.F_inv
+
+
+|Q1_b|T_FF:T2|inv:iv1
+i1 => F_inv.DATAIN
+F_inv <= i1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Q1_b|or_2:or_A
+o1 => F_or_2.IN0
+o2 => F_or_2.IN1
+F_or_2 <= F_or_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Q1_b|or_2:or_B
+o1 => F_or_2.IN0
+o2 => F_or_2.IN1
+F_or_2 <= F_or_2.DB_MAX_OUTPUT_PORT_TYPE
+
+

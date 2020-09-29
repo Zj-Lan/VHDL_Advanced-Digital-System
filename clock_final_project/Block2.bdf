@@ -1,0 +1,106 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(symbol
+	(rect 416 176 648 352)
+	(text "DIgital_Clock" (rect 5 0 91 15)(font "Arial" ))
+	(text "inst" (rect 8 160 31 175)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_in" (rect 0 0 37 15)(font "Arial" ))
+		(text "clk_in" (rect 21 27 58 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "switch_mode" (rect 0 0 87 15)(font "Arial" ))
+		(text "switch_mode" (rect 21 43 108 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "operate" (rect 0 0 49 15)(font "Arial" ))
+		(text "operate" (rect 21 59 70 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "increase" (rect 0 0 56 15)(font "Arial" ))
+		(text "increase" (rect 21 75 77 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "buzz" (rect 0 0 28 15)(font "Arial" ))
+		(text "buzz" (rect 188 27 216 42)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "display_hour1[6..0]" (rect 0 0 122 15)(font "Arial" ))
+		(text "display_hour1[6..0]" (rect 108 43 230 58)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "display_hour2[6..0]" (rect 0 0 122 15)(font "Arial" ))
+		(text "display_hour2[6..0]" (rect 108 59 230 74)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "display_min1[6..0]" (rect 0 0 118 15)(font "Arial" ))
+		(text "display_min1[6..0]" (rect 112 75 230 90)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80)(line_width 3))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "display_min2[6..0]" (rect 0 0 118 15)(font "Arial" ))
+		(text "display_min2[6..0]" (rect 112 91 230 106)(font "Arial" ))
+		(line (pt 232 96)(pt 216 96)(line_width 3))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "display_sec1[6..0]" (rect 0 0 116 15)(font "Arial" ))
+		(text "display_sec1[6..0]" (rect 113 107 229 122)(font "Arial" ))
+		(line (pt 232 112)(pt 216 112)(line_width 3))
+	)
+	(port
+		(pt 232 128)
+		(output)
+		(text "display_sec2[6..0]" (rect 0 0 116 15)(font "Arial" ))
+		(text "display_sec2[6..0]" (rect 113 123 229 138)(font "Arial" ))
+		(line (pt 232 128)(pt 216 128)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 160))
+	)
+)

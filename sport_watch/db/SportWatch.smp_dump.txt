@@ -1,0 +1,48 @@
+
+State Machine - |SportWatch|Timer_Module:timer_md|tmpr_state
+Name tmpr_state.READY tmpr_state.TMR_ALARM tmpr_state.SET_HOUR tmpr_state.SET_MIN tmpr_state.PAULSE tmpr_state.START tmpr_state.TMR_RESET 
+tmpr_state.TMR_RESET 0 0 0 0 0 0 0 
+tmpr_state.START 0 0 0 0 0 1 1 
+tmpr_state.PAULSE 0 0 0 0 1 0 1 
+tmpr_state.SET_MIN 0 0 0 1 0 0 1 
+tmpr_state.SET_HOUR 0 0 1 0 0 0 1 
+tmpr_state.TMR_ALARM 0 1 0 0 0 0 1 
+tmpr_state.READY 1 0 0 0 0 0 1 
+
+State Machine - |SportWatch|Swatch_Module:swatch_md|swpr_state
+Name swpr_state.STOP swpr_state.LAP swpr_state.PAULSE swpr_state.TIMING swpr_state.STW_RESET 
+swpr_state.STW_RESET 0 0 0 0 0 
+swpr_state.TIMING 0 0 0 1 1 
+swpr_state.PAULSE 0 0 1 0 1 
+swpr_state.LAP 0 1 0 0 1 
+swpr_state.STOP 1 0 0 0 1 
+
+State Machine - |SportWatch|CAC_Module:cac_md|cdpr_state
+Name cdpr_state.CALENDAR cdpr_state.SET_DWK cdpr_state.SET_Y3 cdpr_state.SET_Y2 cdpr_state.SET_Y1 cdpr_state.SET_Y0 cdpr_state.SET_MON cdpr_state.SET_DAY cdpr_state.CLD_DWK cdpr_state.CLD_YEAR cdpr_state.CLD_RESET 
+cdpr_state.CLD_RESET 0 0 0 0 0 0 0 0 0 0 0 
+cdpr_state.CLD_YEAR 0 0 0 0 0 0 0 0 0 1 1 
+cdpr_state.CLD_DWK 0 0 0 0 0 0 0 0 1 0 1 
+cdpr_state.SET_DAY 0 0 0 0 0 0 0 1 0 0 1 
+cdpr_state.SET_MON 0 0 0 0 0 0 1 0 0 0 1 
+cdpr_state.SET_Y0 0 0 0 0 0 1 0 0 0 0 1 
+cdpr_state.SET_Y1 0 0 0 0 1 0 0 0 0 0 1 
+cdpr_state.SET_Y2 0 0 0 1 0 0 0 0 0 0 1 
+cdpr_state.SET_Y3 0 0 1 0 0 0 0 0 0 0 1 
+cdpr_state.SET_DWK 0 1 0 0 0 0 0 0 0 0 1 
+cdpr_state.CALENDAR 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |SportWatch|CAC_Module:cac_md|alpr_state
+Name alpr_state.READY alpr_state.CLEAN alpr_state.ALARMING alpr_state.SET_HOUR alpr_state.SET_MIN alpr_state.ALM_RESET 
+alpr_state.ALM_RESET 0 0 0 0 0 0 
+alpr_state.SET_MIN 0 0 0 0 1 1 
+alpr_state.SET_HOUR 0 0 0 1 0 1 
+alpr_state.ALARMING 0 0 1 0 0 1 
+alpr_state.CLEAN 0 1 0 0 0 1 
+alpr_state.READY 1 0 0 0 0 1 
+
+State Machine - |SportWatch|CAC_Module:cac_md|ckpr_state
+Name ckpr_state.CLOCK ckpr_state.SET_HOUR ckpr_state.SET_MIN ckpr_state.CLK_RESET 
+ckpr_state.CLK_RESET 0 0 0 0 
+ckpr_state.SET_MIN 0 0 1 1 
+ckpr_state.SET_HOUR 0 1 0 1 
+ckpr_state.CLOCK 1 0 0 1 

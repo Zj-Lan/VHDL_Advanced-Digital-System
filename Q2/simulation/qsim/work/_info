@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/program/Q2/simulation/qsim
+Eq2
+Z1 w1587416423
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+R0
+Z11 8Q2.vho
+Z12 FQ2.vho
+l0
+L38
+VU31MXS<IXb^K5fE?UHQXe0
+!s100 ;GRTNMZDRQZW2ck9[gJZR2
+Z13 OV;C;10.5b;63
+32
+Z14 !s110 1587416426
+!i10b 1
+Z15 !s108 1587416426.000000
+Z16 !s90 -work|work|Q2.vho|
+Z17 !s107 Q2.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 2 q2 0 22 U31MXS<IXb^K5fE?UHQXe0
+l219
+L48
+VM[EB6S`z>ncb3Q3CTGLmW1
+!s100 Hz<5fJM=02SeG]5R63J<J1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Eq2_vhd_vec_tst
+Z20 w1587416421
+R8
+R9
+R0
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
+l0
+L31
+VQ1<Hi]IW?amLG@VIoYIz^1
+!s100 DP>XMWJHjcD:RLE30_gA63
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Aq2_arch
+R8
+R9
+Z25 DEx4 work 14 q2_vhd_vec_tst 0 22 Q1<Hi]IW?amLG@VIoYIz^1
+l50
+L33
+VdI]MlWRnSBTOEG1nhF2PO3
+!s100 9kJN[M9XmZHda>OdGRNHj2
+R13
+32
+R14
+!i10b 1
+R15
+R23
+R24
+!i113 1
+R18
+R19

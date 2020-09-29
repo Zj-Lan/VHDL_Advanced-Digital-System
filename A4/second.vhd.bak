@@ -1,0 +1,52 @@
+--student name: ZHIJIE LAN
+--student number: 201990309
+--timer module
+
+library ieee ;
+use ieee . std_logic_1164 . all ;
+
+ENTITY test IS
+	PORT ( Clock : in std_logic ;
+				Temp : in std_logic_vector(7 downto 0); 
+			pulse: out std_logic;
+			rate: out std_logic_vector(7 downto 0));
+END test;
+
+ARCHITECTURE design_test OF test IS
+variable TempRate, currentTemp, lastTemp : integer :=0;
+
+begin
+	process ( Clock )
+	variable s1 : integer := 0;
+	variable s2 : integer := 0;
+	begin
+		if (Clock'event and Clock='1') then
+				s1 := s1 + 1;
+				--devide 32768 to 256*128
+				if (s1 > 256) then 
+					s2:= s2+1;
+					if(s2>128 and s2<256) then
+						lastTemp := currentTemp;
+						currentTep := to_integer(signed(Temp));
+						TempRate := currentTep - lastTemp;
+					elsif (s2>=256)then
+						lastTemp := currentTemp;
+						currentTep := to_integer(signed(Temp));
+						TempRate := currentTep - lastTemp;
+						S2:=0;
+					end if;
+					s1:=0;
+				end if;
+		end if;
+	end process ;
+	process(Clk)
+	begin
+	
+		if Reset = '1' then
+			Pulse <= '0';
+		else
+			Pulse <= Clk;
+		end if;	
+	end process;
+END design_timer;
+

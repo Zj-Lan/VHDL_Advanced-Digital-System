@@ -1,0 +1,7 @@
+
+State Machine - |regular|current_state
+Name current_state.B10s current_state.WB20s current_state.W10s current_state.Initial 
+current_state.Initial 0 0 0 0 
+current_state.W10s 0 0 1 1 
+current_state.WB20s 0 1 0 1 
+current_state.B10s 1 0 0 1 

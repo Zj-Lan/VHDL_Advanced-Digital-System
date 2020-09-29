@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/A1_Task3/simulation/qsim
+Emux16
+Z1 w1581279368
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+R0
+Z9 816mux.vho
+Z10 F16mux.vho
+l0
+L36
+VMGNdF<ZlZ=lHYO;hn8WZZ3
+!s100 cUAg8Kg`AWkh6^To`9Y@g0
+Z11 OV;C;10.5b;63
+32
+Z12 !s110 1581279369
+!i10b 1
+Z13 !s108 1581279369.000000
+Z14 !s90 -work|work|16mux.vho|
+Z15 !s107 16mux.vho|
+!i113 1
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 5 mux16 0 22 MGNdF<ZlZ=lHYO;hn8WZZ3
+l168
+L86
+V68LaofIDafC3a7hUDVb^72
+!s100 02SdHH3Vk?hG@PmCJE:ih0
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Emux16_vhd_vec_tst
+Z18 w1581279366
+R6
+R7
+R0
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
+l0
+L31
+V53>f[35YGaV1jXzSS_j8R3
+!s100 eeP>dbNa_do2CJMM_mHLN0
+R11
+32
+Z21 !s110 1581279370
+!i10b 1
+Z22 !s108 1581279370.000000
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R16
+R17
+Amux16_arch
+R6
+R7
+Z25 DEx4 work 17 mux16_vhd_vec_tst 0 22 53>f[35YGaV1jXzSS_j8R3
+l82
+L33
+VD]1@`zz[`oc>LQkoNC_[81
+!s100 jYC`4j`gZAeOTYga:ASPO3
+R11
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R16
+R17

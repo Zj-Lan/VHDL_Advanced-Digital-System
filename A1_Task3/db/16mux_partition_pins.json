@@ -1,0 +1,93 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "F_mux16",
+					"strict" : false
+				},
+				{
+					"name" : "d0",
+					"strict" : false
+				},
+				{
+					"name" : "d1",
+					"strict" : false
+				},
+				{
+					"name" : "d2",
+					"strict" : false
+				},
+				{
+					"name" : "d3",
+					"strict" : false
+				},
+				{
+					"name" : "s3",
+					"strict" : false
+				},
+				{
+					"name" : "s2",
+					"strict" : false
+				},
+				{
+					"name" : "d4",
+					"strict" : false
+				},
+				{
+					"name" : "d5",
+					"strict" : false
+				},
+				{
+					"name" : "d6",
+					"strict" : false
+				},
+				{
+					"name" : "d7",
+					"strict" : false
+				},
+				{
+					"name" : "d8",
+					"strict" : false
+				},
+				{
+					"name" : "d9",
+					"strict" : false
+				},
+				{
+					"name" : "d10",
+					"strict" : false
+				},
+				{
+					"name" : "d11",
+					"strict" : false
+				},
+				{
+					"name" : "d12",
+					"strict" : false
+				},
+				{
+					"name" : "d13",
+					"strict" : false
+				},
+				{
+					"name" : "d14",
+					"strict" : false
+				},
+				{
+					"name" : "d15",
+					"strict" : false
+				},
+				{
+					"name" : "s1",
+					"strict" : false
+				},
+				{
+					"name" : "s0",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Q3_D2 is
+	port (S1S2 :	in std_logic_vector(1 downto 0);
+			Z1Z2 :	out std_logic_vector(1 downto 0));
+end Q3_D2;
+
+architecture design of Q3_D1_encoder is
+signal p3, p2, p1 : std_logic;
+
+begin

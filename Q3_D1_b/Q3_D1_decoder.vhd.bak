@@ -1,0 +1,11 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Q3_D1_decoder is
+	port (code_ham	:	in std_logic_vector(6 downto 0);
+			parity	:	in	std_logic;
+			code_ori	:	out	std_logic_vector(3 downto 0));
+end Q3_D1_decoder;
+
+architecture design of Q3_D1_decoder is
+signal 

@@ -1,0 +1,72 @@
+
+State Machine - |MultiFKlok|timer_func:Inst_Timerfunctie_top|selCtr:Inst_selCtr|next_state
+Name next_state.state3 next_state.state2 next_state.state1 next_state.state0 
+next_state.state0 0 0 0 0 
+next_state.state1 0 0 1 1 
+next_state.state2 0 1 0 1 
+next_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|timer_func:Inst_Timerfunctie_top|selCtr:Inst_selCtr|present_state
+Name present_state.state3 present_state.state2 present_state.state1 present_state.state0 
+present_state.state0 0 0 0 0 
+present_state.state1 0 0 1 1 
+present_state.state2 0 1 0 1 
+present_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|alarm_clock_func:Inst_Wekkerfunctie_top|selCtr:Inst_selCtr|next_state
+Name next_state.state3 next_state.state2 next_state.state1 next_state.state0 
+next_state.state0 0 0 0 0 
+next_state.state1 0 0 1 1 
+next_state.state2 0 1 0 1 
+next_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|alarm_clock_func:Inst_Wekkerfunctie_top|selCtr:Inst_selCtr|present_state
+Name present_state.state3 present_state.state2 present_state.state1 present_state.state0 
+present_state.state0 0 0 0 0 
+present_state.state1 0 0 1 1 
+present_state.state2 0 1 0 1 
+present_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|date_func:Inst_Datumfunctie_top|selCtr:Inst_selCtr|next_state
+Name next_state.state3 next_state.state2 next_state.state1 next_state.state0 
+next_state.state0 0 0 0 0 
+next_state.state1 0 0 1 1 
+next_state.state2 0 1 0 1 
+next_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|date_func:Inst_Datumfunctie_top|selCtr:Inst_selCtr|present_state
+Name present_state.state3 present_state.state2 present_state.state1 present_state.state0 
+present_state.state0 0 0 0 0 
+present_state.state1 0 0 1 1 
+present_state.state2 0 1 0 1 
+present_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|time_func:Inst_tijdsfunctie|besturing:Inst_besturing|next_state
+Name next_state.state3 next_state.state2 next_state.state1 next_state.state0 
+next_state.state0 0 0 0 0 
+next_state.state1 0 0 1 1 
+next_state.state2 0 1 0 1 
+next_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|time_func:Inst_tijdsfunctie|besturing:Inst_besturing|present_state
+Name present_state.state3 present_state.state2 present_state.state1 present_state.state0 
+present_state.state0 0 0 0 0 
+present_state.state1 0 0 1 1 
+present_state.state2 0 1 0 1 
+present_state.state3 1 0 0 1 
+
+State Machine - |MultiFKlok|state_control:Inst_State_Bediening|next_state
+Name next_state.state4 next_state.state3 next_state.state2 next_state.state1 next_state.state0 
+next_state.state0 0 0 0 0 0 
+next_state.state1 0 0 0 1 1 
+next_state.state2 0 0 1 0 1 
+next_state.state3 0 1 0 0 1 
+next_state.state4 1 0 0 0 1 
+
+State Machine - |MultiFKlok|state_control:Inst_State_Bediening|present_state
+Name present_state.state4 present_state.state3 present_state.state2 present_state.state1 present_state.state0 
+present_state.state0 0 0 0 0 0 
+present_state.state1 0 0 0 1 1 
+present_state.state2 0 0 1 0 1 
+present_state.state3 0 1 0 0 1 
+present_state.state4 1 0 0 0 1 

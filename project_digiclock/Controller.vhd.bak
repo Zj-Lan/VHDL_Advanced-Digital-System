@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+--project
+--201991139 WANG ZHONGTIAN
+--201990309 LAN ZHIJIE
+
+entity Ctrl is
+	port( Ctrl_clk_in:  in  std_logic;
+			Ctrl_set_in:	 in  std_logic;
+			Ctrl_time_out: out bit_vector(15 downto 0)
+		  );
+end Ctrl;
+

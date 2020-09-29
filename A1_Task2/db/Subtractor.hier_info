@@ -1,0 +1,73 @@
+|Subtractor
+X[0] => adder:sub1.X
+X[1] => adder:sub2.X
+X[2] => adder:sub3.X
+X[3] => adder:sub4.X
+Y[0] => adder:sub1.Y
+Y[1] => adder:sub2.Y
+Y[2] => adder:sub3.Y
+Y[3] => adder:sub4.Y
+Cin => ~NO_FANOUT~
+Cout <= adder:sub4.Cout
+Sum[0] <= adder:sub1.Sum
+Sum[1] <= adder:sub2.Sum
+Sum[2] <= adder:sub3.Sum
+Sum[3] <= adder:sub4.Sum
+
+
+|Subtractor|adder:sub1
+X => Sum.IN0
+X => Cout.IN0
+X => Cout.IN0
+Y => Sum.IN1
+Y => Cout.IN1
+Y => Cout.IN0
+Cin => Sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Subtractor|adder:sub2
+X => Sum.IN0
+X => Cout.IN0
+X => Cout.IN0
+Y => Sum.IN1
+Y => Cout.IN1
+Y => Cout.IN0
+Cin => Sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Subtractor|adder:sub3
+X => Sum.IN0
+X => Cout.IN0
+X => Cout.IN0
+Y => Sum.IN1
+Y => Cout.IN1
+Y => Cout.IN0
+Cin => Sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Subtractor|adder:sub4
+X => Sum.IN0
+X => Cout.IN0
+X => Cout.IN0
+Y => Sum.IN1
+Y => Cout.IN1
+Y => Cout.IN0
+Cin => Sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+
+

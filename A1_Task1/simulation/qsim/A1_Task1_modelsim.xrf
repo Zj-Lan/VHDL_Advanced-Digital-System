@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/A1_Task1/A1_Task1.vhd
+source_file = 1, D:/intelFPGA_lite/A1_Task1/Waveform.vwf
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, D:/intelFPGA_lite/A1_Task1/db/A1_Task1.cbx.xml
+design_name = A1_Task1
+instance = comp, \F~output\, F~output, A1_Task1, 1
+instance = comp, \A~input\, A~input, A1_Task1, 1
+instance = comp, \C~input\, C~input, A1_Task1, 1
+instance = comp, \B~input\, B~input, A1_Task1, 1
+instance = comp, \O1|F_or_3~0\, O1|F_or_3~0, A1_Task1, 1
+instance = comp, \~QUARTUS_CREATED_GND~I\, ~QUARTUS_CREATED_GND~I, A1_Task1, 1

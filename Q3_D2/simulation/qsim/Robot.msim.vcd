@@ -1,0 +1,484 @@
+$comment
+	File created using the following command:
+		vcd file Robot.msim.vcd -direction
+$end
+$date
+	Tue Apr 21 01:39:44 2020
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module robot_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " S1S2 [1] $end
+$var wire 1 # S1S2 [0] $end
+$var wire 1 $ Z1Z2 [1] $end
+$var wire 1 % Z1Z2 [0] $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var wire 1 ) devoe $end
+$var wire 1 * devclrn $end
+$var wire 1 + devpor $end
+$var wire 1 , ww_devoe $end
+$var wire 1 - ww_devclrn $end
+$var wire 1 . ww_devpor $end
+$var wire 1 / ww_clk $end
+$var wire 1 0 ww_S1S2 [1] $end
+$var wire 1 1 ww_S1S2 [0] $end
+$var wire 1 2 ww_Z1Z2 [1] $end
+$var wire 1 3 ww_Z1Z2 [0] $end
+$var wire 1 4 \Z1Z2[0]~output_o\ $end
+$var wire 1 5 \Z1Z2[1]~output_o\ $end
+$var wire 1 6 \clk~input_o\ $end
+$var wire 1 7 \S1S2[0]~input_o\ $end
+$var wire 1 8 \S1S2[1]~input_o\ $end
+$var wire 1 9 \Selector2~0_combout\ $end
+$var wire 1 : \state.C~q\ $end
+$var wire 1 ; \Selector0~4_combout\ $end
+$var wire 1 < \state.A~q\ $end
+$var wire 1 = \state.D~0_combout\ $end
+$var wire 1 > \state.D~q\ $end
+$var wire 1 ? \state.B~0_combout\ $end
+$var wire 1 @ \state.B~q\ $end
+$var wire 1 A \Z1Z2~0_combout\ $end
+$var wire 1 B \Z1Z2~1_combout\ $end
+$var wire 1 C \ALT_INV_state.D~q\ $end
+$var wire 1 D \ALT_INV_state.B~q\ $end
+$var wire 1 E \ALT_INV_state.C~q\ $end
+$var wire 1 F \ALT_INV_state.A~q\ $end
+$var wire 1 G \ALT_INV_S1S2[0]~input_o\ $end
+$var wire 1 H \ALT_INV_S1S2[1]~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0&
+1'
+x(
+1)
+1*
+1+
+1,
+1-
+1.
+0/
+14
+15
+06
+17
+08
+09
+0:
+1;
+0<
+0=
+0>
+1?
+0@
+1A
+1B
+1C
+1D
+1E
+1F
+0G
+1H
+0"
+1#
+00
+11
+12
+13
+1$
+1%
+$end
+#25000
+1!
+1/
+16
+1<
+1@
+0D
+0F
+0B
+05
+02
+0$
+#50000
+0!
+0#
+0/
+01
+07
+06
+1G
+19
+0?
+#75000
+1!
+1/
+16
+1:
+0@
+1D
+0E
+1B
+15
+12
+1$
+#100000
+0!
+0/
+06
+#125000
+1!
+1/
+16
+#150000
+0!
+0/
+06
+#175000
+1!
+1/
+16
+#200000
+0!
+1#
+0/
+11
+17
+06
+0G
+09
+1?
+#225000
+1!
+1/
+16
+0:
+1@
+0D
+1E
+0B
+05
+02
+0$
+#250000
+0!
+0#
+1"
+0/
+01
+10
+18
+07
+06
+1G
+0H
+1=
+0?
+#275000
+1!
+1/
+16
+1>
+0@
+1D
+0C
+0A
+1B
+15
+04
+12
+03
+0%
+1$
+#300000
+0!
+0"
+0/
+00
+08
+06
+1H
+0;
+0=
+#325000
+1!
+1/
+16
+0<
+0>
+1C
+1F
+1A
+14
+13
+1%
+#350000
+0!
+1"
+0/
+10
+18
+06
+0H
+1;
+1=
+#375000
+1!
+1/
+16
+1<
+1>
+0C
+0F
+0A
+04
+03
+0%
+#400000
+0!
+1#
+0/
+11
+17
+06
+0G
+0=
+1?
+#425000
+1!
+1/
+16
+0>
+1@
+0D
+1C
+1A
+0B
+05
+14
+02
+13
+1%
+0$
+#450000
+0!
+0/
+06
+#475000
+1!
+1/
+16
+#500000
+0!
+0#
+0/
+01
+07
+06
+1G
+1=
+0?
+#525000
+1!
+1/
+16
+1>
+0@
+1D
+0C
+0A
+1B
+15
+04
+12
+03
+0%
+1$
+#550000
+0!
+1#
+0"
+0/
+11
+00
+08
+17
+06
+0G
+1H
+#575000
+1!
+1/
+16
+#600000
+0!
+0#
+1"
+0/
+01
+10
+18
+07
+06
+1G
+0H
+#625000
+1!
+1/
+16
+#650000
+0!
+0"
+0/
+00
+08
+06
+1H
+0;
+0=
+#675000
+1!
+1/
+16
+0<
+0>
+1C
+1F
+1A
+14
+13
+1%
+#700000
+0!
+1"
+0/
+10
+18
+06
+0H
+1;
+1=
+#725000
+1!
+1/
+16
+1<
+1>
+0C
+0F
+0A
+04
+03
+0%
+#750000
+0!
+0"
+1#
+0/
+11
+00
+08
+17
+06
+0G
+1H
+#775000
+1!
+1/
+16
+#800000
+0!
+1"
+0/
+10
+18
+06
+0H
+0=
+1?
+#825000
+1!
+1/
+16
+0>
+1@
+0D
+1C
+1A
+0B
+05
+14
+02
+13
+1%
+0$
+#850000
+0!
+0/
+06
+#875000
+1!
+1/
+16
+#900000
+0!
+0"
+0#
+0/
+01
+00
+08
+07
+06
+1G
+1H
+19
+0?
+#925000
+1!
+1/
+16
+1:
+0@
+1D
+0E
+1B
+15
+12
+1$
+#950000
+0!
+1"
+0/
+10
+18
+06
+0H
+09
+1=
+#975000
+1!
+1/
+16
+0:
+1>
+0C
+1E
+0A
+04
+03
+0%
+#1000000

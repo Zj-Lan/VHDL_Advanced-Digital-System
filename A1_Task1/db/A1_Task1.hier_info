@@ -1,0 +1,35 @@
+|A1_Task1
+A => and_2:A1.a1
+A => and_2:A2.a1
+B => and_2:A2.a2
+B => and_2:A3.a1
+C => and_2:A1.a2
+C => and_2:A3.a2
+F <= or_3:O1.F_or_3
+
+
+|A1_Task1|and_2:A1
+a1 => F_and_2.IN0
+a2 => F_and_2.IN1
+F_and_2 <= F_and_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|A1_Task1|and_2:A2
+a1 => F_and_2.IN0
+a2 => F_and_2.IN1
+F_and_2 <= F_and_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|A1_Task1|and_2:A3
+a1 => F_and_2.IN0
+a2 => F_and_2.IN1
+F_and_2 <= F_and_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|A1_Task1|or_3:O1
+o1 => F_or_3.IN0
+o2 => F_or_3.IN1
+o3 => F_or_3.IN1
+F_or_3 <= F_or_3.DB_MAX_OUTPUT_PORT_TYPE
+
+

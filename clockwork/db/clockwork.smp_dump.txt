@@ -1,0 +1,12 @@
+
+State Machine - |clockwork|state
+Name state.alarmhour state.alarmmin state.alarm state.stop state.start state.chrono state.clockhour state.clockmin state.clock 
+state.clock 0 0 0 0 0 0 0 0 0 
+state.clockmin 0 0 0 0 0 0 0 1 1 
+state.clockhour 0 0 0 0 0 0 1 0 1 
+state.chrono 0 0 0 0 0 1 0 0 1 
+state.start 0 0 0 0 1 0 0 0 1 
+state.stop 0 0 0 1 0 0 0 0 1 
+state.alarm 0 0 1 0 0 0 0 0 1 
+state.alarmmin 0 1 0 0 0 0 0 0 1 
+state.alarmhour 1 0 0 0 0 0 0 0 1 

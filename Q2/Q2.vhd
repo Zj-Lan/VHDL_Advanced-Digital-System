@@ -1,0 +1,70 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity Q2 is
+	port (clk	: in std_logic;
+		M, Q	:	in	std_logic_vector(4 downto 0);
+		Mul	:	out	std_logic_vector(9 downto 0));
+end Q2;
+
+architecture design_Q2 of Q2 is
+
+signal A : std_logic_vector(4 downto 0) := "00000";
+signal tmp_Q : std_logic_vector(4 downto 0);
+
+signal n : integer := 5;
+signal Q_1 : std_logic := '0';
+signal Q0Q_1 : std_logic_vector(1 downto 0);
+
+type state_type is (initial, get_A, shift, result);
+signal state: state_type := initial ;
+
+begin
+
+process (state, clk)
+begin
+if (clk'event and clk='1') then
+	case state is
+		when initial =>
+			state <= get_A;
+			
+		when get_A =>
+			state <= shift;
+				
+		when shift =>
+			if n/=0 then
+				state <= get_A;
+			else
+				state <= result;
+			end if;
+			
+		when result =>
+			state <= result;
+	end case ;
+elsif (clk'event and clk='0') then
+		case state is
+			when initial =>
+				tmp_Q <= Q;
+			when get_A =>
+				if Q0Q_1="01" then
+					A <= A + M ;
+				elsif Q0Q_1="10" then
+					A <= A - M ;
+				end if;						
+			when shift =>
+				--shift A,Q,Q_1
+				Q_1 <= tmp_Q(0);
+				tmp_Q(3 downto 0) <= tmp_Q(4 downto 1);
+				tmp_Q(4) <= A(0);
+				A(3 downto 0) <= A(4 downto 1);
+				n<=n-1;
+			when result =>
+				Mul <= A & tmp_Q;
+		end case;
+end if;
+end process ;
+		
+Q0Q_1 <= tmp_Q(0) & Q_1;
+
+end design_Q2;

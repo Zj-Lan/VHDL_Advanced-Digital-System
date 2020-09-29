@@ -1,0 +1,9 @@
+entity Subtractor is
+	port (A : in bit;
+			 b: out bit );
+end Subtractor;
+
+architecture design of Subtractor is
+begin 
+	b <= A;
+end design;

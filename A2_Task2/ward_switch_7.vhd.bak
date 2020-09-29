@@ -1,0 +1,28 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity encoder_8_3 is  
+	port( encoder_in:		in		std_logic_vector(7 downto 0);
+			encoder_out:	out	std_logic_vector(2 downto 0) );
+end encoder_8_3;
+
+architecture design_encoder_8_3 of encoder_8_3 is
+begin
+	if (encoder_in(7) = '1') then
+		encoder_out <= "001";
+	elsif (encoder_in(6) = '1') then
+		encoder_out <= "010";
+	elsif (encoder_in(5) = '1') then
+		encoder_out <= "011";
+	elsif (encoder_in(4) = '1') then
+		encoder_out <= "100";
+	elsif (encoder_in(3) = '1') then
+		encoder_out <= "101";
+	elsif (encoder_in(2) = '1') then
+		encoder_out <= "110";
+	elsif (encoder_in(1) = '1') then
+		encoder_out <= "111";
+	elsif (encoder_in(0) = '1') then
+		encoder_out <= "000";
+	else
+		encoder_out <= "000";

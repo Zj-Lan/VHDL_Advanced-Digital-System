@@ -1,0 +1,36 @@
+--student name: ZHIJIE LAN
+--student number: 201990309
+--RTMD_Controller module
+
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity RTMD_System is
+	port (CLK, RST, ResetAlarm : in std_logic;
+			Temp, DetNo, MaxRate, MaxTemp : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			TxData, Alarm: out std_logic);
+end RTMD_System;
+
+ARCHITECTURE design_system OF RTMD_System is
+
+component timer is
+	PORT ( Clk , Reset : in std_logic ;
+			Pulse: out std_logic);
+end component ;
+
+component RTMD_Controller is
+	PORT( Trigger, Reset, Clock : IN STD_LOGIC;
+			Temp, DetNo, MaxRate, MaxTemp : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			RstAlarm, TxBusy : IN STD_LOGIC;
+			TxWrite, Alarm : OUT STD_LOGIC;
+			TxData : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+end component ;
+
+component TxSystemRTL is
+	PORT( clock, reset,odd_noteven, write_l : IN STD_LOGIC; 
+			Datain : IN std_logic_vector (7 downto 0);
+			state, n_state : buffer std_logic_vector (2 downto 0);
+			T, B : buffer std_logic_vector (5 downto 0);
+			busy, TxData : OUT STD_LOGIC
+			); 
+end component ;

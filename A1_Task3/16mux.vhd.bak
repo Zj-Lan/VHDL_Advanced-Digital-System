@@ -1,0 +1,67 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity and_2 is
+	port ( a1, a2	: in	std_logic;
+			 F_and_2	: out	std_logic );
+end and_2;
+
+architecture design_and_2 of and_2 is
+begin
+	F_and_2 <= a1 and a2;
+end design_and_2;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity and_4 is
+	port ( a1, a2, a3, a4	: in	std_logic;
+			 F_and_4				: out	std_logic );
+end and_4;
+
+architecture design_and_4 of and_4 is
+begin
+	F_and_4 <= a1 and a2 and a3 and a4;
+end design_and_4;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity or_2 is
+	port ( o1, o2		: in	std_logic;
+			 F_or_2		: out	std_logic );
+end or_2;
+
+architecture design_or_2 of or_2 is
+begin
+	F_or_2 <= o1 or o2;
+end design_or_2;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity or_8 is
+	port ( o1, o2, o3, o4, o5, o6, o7, o8	: in	std_logic;
+			 F_or_8									: out	std_logic );
+end or_8;
+
+architecture design_or_8 of or_8 is
+begin
+	F_or_8 <= o1 or o2 or o3 or o4 or o5 or o6 or o7 or o8;
+end design_or_8;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity inv is
+	port (i1		:	in		std_logic;
+			F_inv	:	out	std_logic );
+end inv;
+
+architecture design_inv of inv is
+begin
+	F_inv <= not i1;
+end design_inv;
+
+
+
